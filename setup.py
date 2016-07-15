@@ -21,7 +21,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='16.07rc1',
+    version='16.07rc2',
 
     description='A compact GUI application for optical distortion calibration of endoscopes',
     long_description=long_description,
@@ -56,6 +56,9 @@ setup(
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2.7',
+
+        # Currently tested only on Ubuntu 14.04 LTS
+        'Operating System :: POSIX :: Linux',
     ],
 
     # What does your project relate to?
