@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 from cv2 import VideoCapture, imshow, waitKey, putText, FONT_HERSHEY_PLAIN,\
     drawChessboardCorners
 from numpy import zeros, uint8
+import pkg_resources
 import calibration
 
 KEY_QUIT = 27
@@ -121,3 +122,15 @@ def main():
     __run(video_source_desc=video_source_desc, roi=args.roi,
           pattern_specs=args.pattern_specs, calibration_file=args.calibration_file,
           output_folder=args.output_folder)
+
+
+def test():
+    dataset_desc = 'sample_001'
+    video_source_desc = pkg_resources.resource_string('endocal', 'data/' + dataset_desc)
+    print video_source_desc
+    # TODO
+    # __run(video_source_desc=os.path.join(video_source_desc, 'frame_%3d.jpg'),
+    #       roi=None,
+    #       pattern_specs=[3, 11, 3, 1],
+    #       calibration_file=None,
+    #       output_folder='./tmp-' + dataset_desc)
