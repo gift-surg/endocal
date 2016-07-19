@@ -136,7 +136,6 @@ class Calibrator:
         self.grid[:, 1] *= d_x
         for start in range(width, width*height, 2*width):
             self.grid[start:start + width, 0] += d_y / 2
-        print self.grid
         self.grids = None
         self.grid_candidates = None
         self.image_size = None
