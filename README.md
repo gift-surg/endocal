@@ -17,6 +17,9 @@ endocal was developed as part of the [GIFT-Surg project](http://www.gift-surg.ac
       * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
    * After performing a calibration, the application will automatically show the undistorted images to the right as shown in [this screenshot](endocal/res/screenshot-undistort.png).
 
+# Removing
+`pip uninstall endocal`
+
 # How to use
 `endocal --help` will show details of what input parameters are expected. Examples include:
 
