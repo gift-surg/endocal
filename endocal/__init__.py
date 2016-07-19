@@ -128,7 +128,7 @@ def main():
 def test():
     dataset_desc = 'sample_001'
     file_wildcard = 'frame_%3d.jpg'
-    video_source_desc = pkg_resources.resource_string('endocal', join(join('data', dataset_desc), file_wildcard))
+    video_source_desc = pkg_resources.resource_filename('endocal', join(join('data', dataset_desc), file_wildcard))
     print video_source_desc
     # TODO
     # __run(video_source_desc=os.path.join(video_source_desc, 'frame_%3d.jpg'),
