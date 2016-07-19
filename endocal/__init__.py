@@ -130,9 +130,8 @@ def test():
     file_wildcard = 'frame_%3d.jpg'
     video_source_desc = pkg_resources.resource_filename('endocal', join(join('data', dataset_desc), file_wildcard))
     print video_source_desc
-    # TODO
-    # __run(video_source_desc=os.path.join(video_source_desc, 'frame_%3d.jpg'),
-    #       roi=None,
-    #       pattern_specs=[3, 11, 3, 1],
-    #       calibration_file=None,
-    #       output_folder='./tmp-' + dataset_desc)
+    __run(video_source_desc=video_source_desc,
+          roi=None,
+          pattern_specs=[3, 11, 3, 1],
+          calibration_file=None,
+          output_folder='./tmp-' + dataset_desc)
