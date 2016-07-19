@@ -10,11 +10,12 @@ endocal was developed as part of the [GIFT-Surg project](http://www.gift-surg.ac
 # Installation
 1. Install endocal by running `pip install endocal`.
 1. Test your installation by running `endocal-test`:
-   1. See `endocal/res/screenshot-start.png` for what to expect.
-   1. To perform an optical distortion calibration, follow the instructions shown in red on top of the window. All data for each calibration will be saved in the sub-folder of a folder called `tmp-sample_001`, created within the current folder. These include:
+   * See `endocal/res/screenshot-start.png` for what to expect on launching the application.
+   * To perform an optical distortion calibration, follow the instructions shown in red on top of the window. While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as in `endocal/res/screenshot-detection.png`.
+   * All data for each calibration will be saved in the sub-folder of a folder called `tmp-sample_001`, created within the current folder. These include:
       * Calibration parameters saved as `calibration.yml`
       * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
-   1. After performing a calibration, the application will automatically show the undistorted images to the right as shown in `endocal/res/screenshot-undistort.png`
+   * After performing a calibration, the application will automatically show the undistorted images to the right as shown in `endocal/res/screenshot-undistort.png`
 
 # How to use
 `endocal --help` will show details of what input parameters are expected. Examples include:
