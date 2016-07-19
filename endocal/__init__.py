@@ -4,6 +4,8 @@ from argparse import ArgumentParser
 from cv2 import VideoCapture, imshow, waitKey, putText, FONT_HERSHEY_PLAIN,\
     drawChessboardCorners
 from numpy import zeros, uint8
+import pkg_resources
+from os.path import join
 import calibration
 
 KEY_QUIT = 27
@@ -20,50 +22,24 @@ def __frame_size(video_source_desc):
     return [0, 0, tmp_image.shape[1], tmp_image.shape[0]]
 
 
-def main():
-    # parse arguments
-    parser = ArgumentParser()
-    parser.add_argument('--input', type=str,
-                        help='Video file, video folder or device id (e.g. 1 for /dev/video1)',
-                        required=True)
-    parser.add_argument('--calibration-file', type=str,
-                        help='YAML file with calibration parameters',
-                        required=False)
-    parser.add_argument('--output-folder', type=str,
-                        help='Where to log results',
-                        required=True)
-    parser.add_argument('--roi', nargs=4, type=int,
-                        help='Sub-frame specs: <x> <y> <width> <height>',
-                        required=False)
-    parser.add_argument('--pattern-specs', nargs=4, type=float,
-                        help='Calibration pattern dimensions: <rows> <cols> '
-                             '<row_spacing> <col_spacing> (rows a.k.a. width, '
-                             'cols a.k.a. height)',
-                        required=True)
-    args = parser.parse_args()
+def __run(video_source_desc, roi, pattern_specs, calibration_file,
+          output_folder):
+    full = __frame_size(video_source_desc)
+    if roi is None:
+        roi = full
 
-    # do work
-    try:
-        video_source_desc = int(args.input)
-    except ValueError:
-        video_source_desc = args.input
-
-    roi = __frame_size(video_source_desc)
-
-    pattern_specs = tuple(args.pattern_specs)
+    pattern_specs = tuple(pattern_specs)
     calibrator = calibration.Calibrator(pattern_specs=pattern_specs,
-                                        file_path=args.calibration_file,
+                                        file_path=calibration_file,
                                         # i.e. None handled internally:
-                                        roi=args.roi,
-                                        full=roi)
-    if args.roi:
-        roi = args.roi
+                                        roi=roi,
+                                        full=full)
     state = calibration.State(calibrator)
     source = VideoCapture(video_source_desc)
-    file_io = calibration.FileIO(args.output_folder)
+    file_io = calibration.FileIO(output_folder)
 
     if not source.isOpened():
-        raise RuntimeError('Could not open ' + args.input)
+        raise RuntimeError('Could not open ' + str(video_source_desc))
 
     frame = zeros((roi[3], 2 * roi[2], 3), dtype=uint8)
     while True:
@@ -114,3 +90,47 @@ def main():
                 state.correcting()
 
     source.release()
+
+
+def main():
+    # parse arguments
+    parser = ArgumentParser()
+    parser.add_argument('--input', type=str,
+                        help='Video file, video folder or device id (e.g. 1 for /dev/video1)',
+                        required=True)
+    parser.add_argument('--calibration-file', type=str,
+                        help='YAML file with calibration parameters',
+                        required=False)
+    parser.add_argument('--output-folder', type=str,
+                        help='Where to log results',
+                        required=True)
+    parser.add_argument('--roi', nargs=4, type=int,
+                        help='Sub-frame specs: <x> <y> <width> <height>',
+                        required=False)
+    parser.add_argument('--pattern-specs', nargs=4, type=float,
+                        help='Calibration pattern dimensions: <rows> <cols> '
+                             '<row_spacing> <col_spacing> (rows a.k.a. width, '
+                             'cols a.k.a. height)',
+                        required=True)
+    args = parser.parse_args()
+
+    # do work
+    try:
+        video_source_desc = int(args.input)
+    except ValueError:
+        video_source_desc = args.input
+
+    __run(video_source_desc=video_source_desc, roi=args.roi,
+          pattern_specs=args.pattern_specs, calibration_file=args.calibration_file,
+          output_folder=args.output_folder)
+
+
+def test():
+    dataset_desc = 'sample_001'
+    file_wildcard = 'frame_%3d.jpg'
+    data_dir = pkg_resources.resource_filename('endocal', join('data', dataset_desc))
+    __run(video_source_desc=join(data_dir, file_wildcard),
+          roi=None,
+          pattern_specs=[3, 11, 3, 1],
+          calibration_file=None,
+          output_folder='./tmp-' + dataset_desc)

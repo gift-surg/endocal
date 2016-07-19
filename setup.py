@@ -21,7 +21,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='16.07rc2',
+    version='16.07rc14',
 
     description='A compact GUI application for optical distortion calibration of endoscopes',
     long_description=long_description,
@@ -66,7 +66,10 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=['endocal'],
+
+    # As recommended in https://docs.python.org/2/distutils/setupscript.html#installing-package-data
+    package_dir={'endocal': 'endocal'},
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
@@ -77,12 +80,18 @@ setup(
     # External dependencies not on PyPI
     dependency_links=['http://opencv.org/'],
 
+    # If there are data files included in your packages that need to be
+    # installed, specify them here.  If using Python 2.6 or less, then these
+    # have to be included in MANIFEST.in as well.
+    package_data={'endocal': ['data/sample_001/*']},
+
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
             'endocal=endocal:main',
+            'endocal-test=endocal:test'
         ],
     },
 )
