@@ -1,6 +1,11 @@
-endocal is a compact GUI application for optical distortion calibration of endoscopes.
+# endocal
 
-endocal was developed as part of the [GIFT-Surg project](http://www.gift-surg.ac.uk/). It uses the [OpenCV camera calibration module](http://docs.opencv.org/2.4/doc/tutorials/calib3d/camera_calibration/camera_calibration.html) under the hood, and was developed by Dzhoshkun I. Shakir at the [Translational Imaging Group](http://cmictig.cs.ucl.ac.uk/) in the [Centre for Medical Image Computing](http://www.ucl.ac.uk/cmic/homepage) at [University College London (UCL)](http://www.ucl.ac.uk/).
+endocal is a compact GUI application for optical distortion calibration of endoscopes. It uses the [OpenCV camera calibration module](http://docs.opencv.org/2.4/doc/tutorials/calib3d/camera_calibration/camera_calibration.html) under the hood.
+
+endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project](http://www.gift-surg.ac.uk/) at the [Translational Imaging Group](http://cmictig.cs.ucl.ac.uk/) in the [Centre for Medical Image Computing](http://www.ucl.ac.uk/cmic/homepage) at [University College London (UCL)](http://www.ucl.ac.uk/).
+
+# License
+Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal is available as free open-source software under a BSD 3-Clause Licence.
 
 # System requirements
 * [OpenCV 2.4](http://docs.opencv.org/2.4/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html)
@@ -40,6 +45,3 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 
 # Supported platforms
 endocal was tested only on Linux (Ubuntu 14.04 LTS) so far. However it is highly likely that it will work on other platforms as well, due to the small number of dependencies.
-
-# License
-Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal is available as free open-source software under a BSD 3-Clause Licence.
