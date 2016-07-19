@@ -22,12 +22,17 @@ endocal was developed as part of the [GIFT-Surg project](http://www.gift-surg.ac
 
 * Using all frames stored as indexed files e.g. `frame_009.jpg`:
 ```
-endocal --pattern-specs 3 11 2 1 --output-folder ./calibration-results --input /home/dzhoshkun/offline-calibration-data/frame_%3d.jpg
+endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /home/dzhoshkun/offline-calibration-data/frame_%3d.jpg
 ```
 
 * Using online video stream from a frame-grabber (attached to an endoscope) that is mounted as `/dev/video0` on Linux:
 ```
-endocal --input 0 --pattern-specs 3 11 2 1 --output-folder ./calibration-results
+endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
+```
+
+* Using a `700 x 700` sub-frame of the whole endoscopic video frame (`1920 x 1080`):
+```
+endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 ```
 
 # Supported platforms
