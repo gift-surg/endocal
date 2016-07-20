@@ -21,7 +21,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='16.07',
+    version='16.08rc2',
 
     description='A compact GUI application for optical distortion calibration of endoscopes',
     long_description=long_description,
@@ -66,10 +66,10 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=['endocal'],
+    packages=['endocal', 'cad'],
 
     # As recommended in https://docs.python.org/2/distutils/setupscript.html#installing-package-data
-    package_dir={'endocal': 'endocal'},
+    package_dir={'endocal': 'endocal', 'cad': 'cad'},
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
@@ -91,7 +91,8 @@ setup(
     entry_points={
         'console_scripts': [
             'endocal=endocal:main',
-            'endocal-test=endocal:test'
+            'endocal-test=endocal:test',
+            'dxf=cad:dxf'
         ],
     },
 )
