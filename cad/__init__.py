@@ -30,7 +30,7 @@ def generate_dxf():
                              ' (measured center-to-center)',
                         required=True)
     parser.add_argument('--output-file', type=str,
-                        help='Where to save generated DXF file',
+                        help='DXF file for saving generated grid',
                         required=True)
     args = parser.parse_args()
 
@@ -41,7 +41,22 @@ def generate_dxf():
                         horizontal_space=args.horizontal_space,
                         vertical_space=args.vertical_space)
 
+    legend_header_str = dxf.legend_header()
+    legend_str = dxf.legend()
+
+    print 'Saving grid to file ' + args.output_file
     output_file = open(args.output_file, 'w')
     output_file.write(grid_header_str)
+    output_file.write('\n')
     output_file.write(grid_str)
+    output_file.write('\n')
     output_file.close()
+
+    legend_file = dxf.legend_filename(args.output_file)
+    print 'Saving legend to file ' + legend_file
+    legend_file = open(legend_file, 'w')
+    legend_file.write(legend_header_str)
+    legend_file.write('\n')
+    legend_file.write(legend_str)
+    legend_file.write('\n')
+    legend_file.close()
