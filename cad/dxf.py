@@ -1,3 +1,16 @@
+from os.path import join
+from pkg_resources import resource_filename
+
+
+def __header():
+    """Read header in from package data
+
+    :return:
+    """
+    header_filename = resource_filename(
+        'cad', join('data/dxf', 'header.dxf'))
+    with open(header_filename, 'r') as header_file:
+        return header_file.read()
 
 
 def grid_header():
@@ -5,8 +18,7 @@ def grid_header():
 
     :return:
     """
-    # TODO
-    return 'grid header'
+    return __header()
 
 
 def grid(laser_beam_width, diameter):
@@ -39,8 +51,7 @@ def legend_header():
 
     :return:
     """
-    # TODO
-    return 'legend_header'
+    return __header()
 
 
 def legend(laser_beam_width, total_line_width):
