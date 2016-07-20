@@ -9,19 +9,17 @@ def grid_header():
     return 'grid header'
 
 
-def grid(laser_beam_width, diameter,
-         width, height,
-         horizontal_space, vertical_space):
+def grid(laser_beam_width, diameter):
     """Generate DXF text describing asymmetrical circles grid.
 
     :param laser_beam_width:
     :param diameter:
-    :param width:
-    :param height:
-    :param horizontal_space:
-    :param vertical_space:
     :return:
     """
+    width = 3
+    height = 11
+    horizontal_space = diameter,
+    vertical_space = 1.5 * diameter
     # TODO
     return 'grid string'
 
@@ -45,11 +43,12 @@ def legend_header():
     return 'legend_header'
 
 
-def legend():
+def legend(laser_beam_width, total_line_width):
     """Generate DXF text describing legend.
 
+    :param laser_beam_width:
+    :param total_line_width:
     :return:
     """
     # TODO
-    # TODO - parameters
     return 'legend'

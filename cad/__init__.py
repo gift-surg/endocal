@@ -15,20 +15,6 @@ def generate_dxf():
     parser.add_argument('--diameter', type=float,
                         help='Circular blob diameter in mm',
                         required=True)
-    parser.add_argument('--width', type=int,
-                        help='Circle grid width, i.e. nr. of columns',
-                        required=True)
-    parser.add_argument('--height', type=int,
-                        help='Circle grid height, i.e. nr. or rows',
-                        required=True)
-    parser.add_argument('--horizontal-space', type=float,
-                        help='Space between adjacent columns of grid in mm'
-                             ' (measured center-to-center)',
-                        required=True)
-    parser.add_argument('--vertical-space', type=float,
-                        help='Space between adjacent rows of grid in mm'
-                             ' (measured center-to-center)',
-                        required=True)
     parser.add_argument('--output-file', type=str,
                         help='DXF file for saving generated grid',
                         required=True)
@@ -36,13 +22,11 @@ def generate_dxf():
 
     grid_header_str = dxf.grid_header()
     grid_str = dxf.grid(laser_beam_width=args.laser_beam_width,
-                        diameter=args.diameter,
-                        width=args.width, height=args.height,
-                        horizontal_space=args.horizontal_space,
-                        vertical_space=args.vertical_space)
+                        diameter=args.diameter)
 
     legend_header_str = dxf.legend_header()
-    legend_str = dxf.legend()
+    legend_str = dxf.legend(laser_beam_width=args.laser_beam_width,
+                            total_line_width=args.diameter/2.0)
 
     print 'Saving grid to file ' + args.output_file
     output_file = open(args.output_file, 'w')
