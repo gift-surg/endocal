@@ -1,4 +1,4 @@
-from os.path import join
+from os.path import join, splitext
 from pkg_resources import resource_filename
 
 
@@ -42,8 +42,8 @@ def legend_filename(grid_filename):
     :param grid_filename:
     :return:
     """
-    # TODO
-    return 'legend.dxf'
+    split_buffer = splitext(grid_filename)
+    return split_buffer[0] + '-legend' + split_buffer[1]
 
 
 def legend_header():
