@@ -20,12 +20,13 @@ def generate_dxf():
                         required=True)
     args = parser.parse_args()
 
+    laser_beam_width = args.laser_beam_width / 1000.0  # now in mm
     grid_header_str = dxf.grid_header()
-    grid_str = dxf.grid(laser_beam_width=args.laser_beam_width,
+    grid_str = dxf.grid(laser_beam_width=laser_beam_width,
                         diameter=args.diameter)
 
     legend_header_str = dxf.legend_header()
-    legend_str = dxf.legend(laser_beam_width=args.laser_beam_width,
+    legend_str = dxf.legend(laser_beam_width=laser_beam_width,
                             total_line_width=args.diameter/2.0)
 
     print 'Saving grid to file ' + args.output_file
