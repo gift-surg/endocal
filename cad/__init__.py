@@ -24,16 +24,20 @@ def generate_dxf():
     grid_header_str = dxf.grid_header()
     grid_str = dxf.grid(laser_beam_width=laser_beam_width,
                         diameter=args.diameter)
+    grid_footer_str = dxf.grid_footer()
 
     legend_header_str = dxf.legend_header()
     legend_str = dxf.legend(laser_beam_width=laser_beam_width,
                             total_line_width=args.diameter/2.0)
+    legend_footer_str = dxf.legend_footer()
 
     print 'Saving grid to file ' + args.output_file
     with open(args.output_file, 'w') as output_file:
         output_file.write(grid_header_str)
         output_file.write('\n')
         output_file.write(grid_str)
+        output_file.write('\n')
+        output_file.write(grid_footer_str)
         output_file.write('\n')
 
     legend_file = dxf.legend_filename(args.output_file)
@@ -42,4 +46,6 @@ def generate_dxf():
         legend_file.write(legend_header_str)
         legend_file.write('\n')
         legend_file.write(legend_str)
+        legend_file.write('\n')
+        legend_file.write(legend_footer_str)
         legend_file.write('\n')

@@ -13,6 +13,17 @@ def __header():
         return header_file.read()
 
 
+def __footer():
+    """Read footer in from package data.
+
+    :return:
+    """
+    footer_filename = resource_filename(
+        'cad', join('data/dxf', 'footer.dxf'))
+    with open(footer_filename, 'r') as footer_file:
+        return footer_file.read()
+
+
 def __format_float(value):
     """Format float in scientific notation, 6 decimal places.
 
@@ -83,6 +94,14 @@ def grid(laser_beam_width, diameter):
     return grid_str
 
 
+def grid_footer():
+    """Generate grid footer text for DXF file.
+
+    :return:
+    """
+    return __footer()
+
+
 def legend_filename(grid_filename):
     """Generate legend filename corresponding to `grid_filename`.
 
@@ -110,3 +129,11 @@ def legend(laser_beam_width, total_line_width):
     """
     # TODO
     return 'legend'
+
+
+def legend_footer():
+    """Generate legend footer text for DXF file.
+
+    :return:
+    """
+    return __footer()

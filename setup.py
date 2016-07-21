@@ -21,7 +21,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='16.08rc13',
+    version='16.08rc21',
 
     description='A compact GUI application for optical distortion calibration of endoscopes',
     long_description=long_description,
@@ -84,7 +84,7 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     package_data={'endocal': ['data/sample_001/*'],
-                  'cad': ['data/dxf/header.dxf']},
+                  'cad': ['data/dxf/header.dxf', 'data/dxf/footer.dxf']},
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
