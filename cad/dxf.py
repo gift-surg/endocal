@@ -3,7 +3,7 @@ from pkg_resources import resource_filename
 
 
 def __header():
-    """Read header in from package data
+    """Read header in from package data.
 
     :return:
     """
@@ -11,6 +11,15 @@ def __header():
         'cad', join('data/dxf', 'header.dxf'))
     with open(header_filename, 'r') as header_file:
         return header_file.read()
+
+
+def __format_float(value):
+    """Format float in scientific notation, 6 decimal places.
+
+    :param value:
+    :return:
+    """
+    return '{:.6e}'.format(float(value))
 
 
 def grid_header():
@@ -30,10 +39,48 @@ def grid(laser_beam_width, diameter):
     """
     width = 3
     height = 11
-    horizontal_space = diameter,
-    vertical_space = 1.5 * diameter
-    # TODO
-    return 'grid string'
+
+    # now we shift paradigm: width becomes rows, height cols
+    num_rows = 2 * width
+    num_cols_even = height / 2
+    num_cols_odd = num_cols_even + 1
+
+    # first and last line coordinates
+    x0 = laser_beam_width / 2.0
+    y0 = 0.0
+    xn = diameter / 2.0
+
+    # number of laser application trajectories (i.e. lines)
+    num_lines = int(round(diameter / (2.0 * laser_beam_width)) + 1)
+
+    # step size for lines
+    dx = (xn - x0) / (num_lines - 1)
+
+    grid_str = ''
+    for row in range(num_rows):
+        if row % 2 == 0:  # even row
+            num_cols = num_cols_even
+            offset = diameter
+        else:  # odd row
+            num_cols = num_cols_odd
+            offset = 0
+
+        for col in range(num_cols):
+            for line in range(num_lines):
+                grid_str += 'CIRCLE' + '\n'
+                for value in [8, 0, 62, 7, 10]:
+                    grid_str += str(value) + '\n'
+                grid_str += __format_float(
+                    x0 + col * (2 * diameter) + offset) + '\n'
+                grid_str += str(20) + '\n'
+                grid_str += __format_float(
+                    y0 + (row + 1) * (1.5 * diameter)) + '\n'
+                for value in [30, 0, 40]:
+                     grid_str += str(value) + '\n'
+                grid_str += __format_float(x0 + dx * line) + '\n'
+                grid_str += str(0) + '\n'
+
+    return grid_str
 
 
 def legend_filename(grid_filename):

@@ -37,7 +37,7 @@ def generate_dxf():
 
     legend_file = dxf.legend_filename(args.output_file)
     print 'Saving legend to file ' + legend_file
-    with open(legend_file, 'w') as  legend_file:
+    with open(legend_file, 'w') as legend_file:
         legend_file.write(legend_header_str)
         legend_file.write('\n')
         legend_file.write(legend_str)
