@@ -87,7 +87,7 @@ def grid(laser_beam_width, diameter):
                 grid_str += __format_float(
                     y0 + (row + 1) * (1.5 * diameter)) + '\n'
                 for value in [30, 0, 40]:
-                     grid_str += str(value) + '\n'
+                    grid_str += str(value) + '\n'
                 grid_str += __format_float(x0 + dx * line) + '\n'
                 grid_str += str(0) + '\n'
 

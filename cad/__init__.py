@@ -34,18 +34,12 @@ def generate_dxf():
     print 'Saving grid to file ' + args.output_file
     with open(args.output_file, 'w') as output_file:
         output_file.write(grid_header_str)
-        output_file.write('\n')
         output_file.write(grid_str)
-        output_file.write('\n')
         output_file.write(grid_footer_str)
-        output_file.write('\n')
 
     legend_file = dxf.legend_filename(args.output_file)
     print 'Saving legend to file ' + legend_file
     with open(legend_file, 'w') as legend_file:
         legend_file.write(legend_header_str)
-        legend_file.write('\n')
         legend_file.write(legend_str)
-        legend_file.write('\n')
         legend_file.write(legend_footer_str)
-        legend_file.write('\n')
