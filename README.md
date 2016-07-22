@@ -7,6 +7,11 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project](
 # License
 Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal is available as free open-source software under a BSD 3-Clause Licence.
 
+# Features
+
+* Lightweight, compact GUI application for optical distortion calibration of endoscopes
+* Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication
+
 # System requirements
 * [OpenCV 2.4](http://docs.opencv.org/2.4/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html)
 * [pip](https://pip.pypa.io/en/stable/installing/)
@@ -46,7 +51,7 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 ```
 
-## DXF file generation
+## ASCII DXF file generation
 
 For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser cutter with a beam width of `45 μm` (microns):
 ```
