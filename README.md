@@ -26,7 +26,10 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 `pip uninstall endocal`
 
 # How to use
-`endocal --help` will show details of what input parameters are expected. Examples include:
+
+## Calibration
+
+`endocal --help` shows details of what input parameters are expected. Examples include:
 
 * Using all frames stored as indexed files e.g. `frame_009.jpg`:
 ```
@@ -42,6 +45,10 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 ```
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 ```
+
+## DXF file generation
+
+For instance `dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf` generates an asymmetric circles grid saved to the file `output.dxf` and the corresponding (ellipse) legend to the file `output-legend.dxf` (legend filename always inferred from main DXF filename).
 
 # Supported platforms
 endocal was tested only on Linux (Ubuntu 14.04 LTS) so far. However it is highly likely that it will work on other platforms as well, due to the small number of dependencies.
