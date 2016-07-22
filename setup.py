@@ -4,7 +4,7 @@ See:
 https://github.com/gift-surg/endocal
 """
 
-from setuptools import setup, find_packages
+from setuptools import setup
 # To use a consistent encoding
 from codecs import open
 from os import path
@@ -21,7 +21,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='16.07',
+    version='16.07.22rc1',
 
     description='A compact GUI application for optical distortion calibration of endoscopes',
     long_description=long_description,
@@ -62,14 +62,17 @@ setup(
     ],
 
     # What does your project relate to?
-    keywords='optical distortion calibration, endoscope, endoscopy, medical imaging, image processing, biomedical engineering, medical physics, image-guided interventions',
+    keywords='optical distortion calibration, endoscope, endoscopy, medical imaging,'
+             'image processing, biomedical engineering, medical physics,'
+             'image-guided interventions',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=['endocal'],
+    packages=['endocal', 'cad'],
 
-    # As recommended in https://docs.python.org/2/distutils/setupscript.html#installing-package-data
-    package_dir={'endocal': 'endocal'},
+    # As recommended in
+    # https://docs.python.org/2/distutils/setupscript.html#installing-package-data
+    package_dir={'endocal': 'endocal', 'cad': 'cad'},
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
@@ -83,7 +86,9 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
-    package_data={'endocal': ['data/sample_001/*']},
+    package_data={'endocal': ['data/sample_001/*'],
+                  'cad': ['data/dxf/header.dxf', 'data/dxf/footer.dxf',
+                          'data/dxf/polyline.dxf', 'data/dxf/seqend.dxf']},
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
@@ -91,7 +96,8 @@ setup(
     entry_points={
         'console_scripts': [
             'endocal=endocal:main',
-            'endocal-test=endocal:test'
+            'endocal-test=endocal:test',
+            'dxf=cad:generate_dxf'
         ],
     },
 )
