@@ -10,7 +10,7 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 # Features
 
 * Lightweight, compact GUI application for optical distortion calibration of endoscopes
-* Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication
+* Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
 # System requirements
 * [OpenCV 2.4](http://docs.opencv.org/2.4/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html)
