@@ -48,7 +48,11 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 
 ## DXF file generation
 
-For instance `dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf` generates an asymmetric circles grid saved to the file `output.dxf` and the corresponding (ellipse) legend to the file `output-legend.dxf` (legend filename always inferred from main DXF filename).
+For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser cutter with a beam width of `45 μm` (microns):
+```
+dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
+```
+Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
 
 # Supported platforms
 endocal was tested only on Linux (Ubuntu 14.04 LTS) so far. However it is highly likely that it will work on other platforms as well, due to the small number of dependencies.
