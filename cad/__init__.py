@@ -28,7 +28,7 @@ def generate_dxf():
 
     legend_header_str = dxf.legend_header()
     legend_str = dxf.legend(laser_beam_width=laser_beam_width,
-                            total_line_width=args.diameter/2.0)
+                            circle_diameter=args.diameter)
     legend_footer_str = dxf.legend_footer()
 
     print 'Saving grid to file ' + args.output_file

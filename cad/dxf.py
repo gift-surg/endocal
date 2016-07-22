@@ -144,19 +144,20 @@ def legend_header():
     return __header()
 
 
-def legend(laser_beam_width, total_line_width):
+def legend(laser_beam_width, circle_diameter):
     """Generate DXF text describing legend.
 
     :param laser_beam_width:
-    :param total_line_width:
+    :param circle_diameter: diameter of circles in
+    spanned circles grid, used for scaling legend
     :return:
     """
 
     # Coordinates of the two vertices of ellipse major axis
-    x1 = -1.26978
-    x2 = 15.6187
-    y1 = 1.68651
-    y2 = 13.8027
+    x1 = circle_diameter * -1.26978
+    x2 = circle_diameter * 15.6187
+    y1 = circle_diameter * 1.68651
+    y2 = circle_diameter * 13.8027
     tilt_angle = atan2(y2 - y1, x2 - x1)
 
     # Centre of ellipse
@@ -164,9 +165,10 @@ def legend(laser_beam_width, total_line_width):
     yc = (y1 + y2) / 2
 
     # Short radius
-    b = 7.84016
+    b = circle_diameter * 7.84016
 
     # Total number of passes required
+    total_line_width = circle_diameter / 2
     num_lines = int(round(total_line_width / laser_beam_width) + 1)
     mutual_line_distance = total_line_width / (num_lines - 1)
 
