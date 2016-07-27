@@ -23,7 +23,7 @@ def __frame_size(video_source_desc):
 
 
 def __run(video_source_desc, roi, pattern_specs, calibration_file,
-          output_folder):
+          output_folder, max_num_frames = float('inf')):
     full = __frame_size(video_source_desc)
     if roi is None:
         roi = full
@@ -42,6 +42,7 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
         raise RuntimeError('Could not open ' + str(video_source_desc))
 
     frame = zeros((roi[3], 2 * roi[2], 3), dtype=uint8)
+    num_frames = 0
     while True:
         ret, image = source.read()
         if not ret:
@@ -55,9 +56,11 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
             if ret:
                 frame[0:roi[3], roi[2]:2*roi[2]] = corrected_image
         elif state.is_acquiring():
-            ret, blobs = calibrator.append(image, file_io.next_image())
-            if ret:
-                drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
+            if num_frames < max_num_frames:
+                ret, blobs = calibrator.append(image, file_io.next_image())
+                if ret:
+                    num_frames += 1
+                    drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
         elif state.is_calibrating():
             if calibrator.done():
                 state.correcting()
@@ -130,6 +133,7 @@ def test():
     file_wildcard = 'frame_%3d.jpg'
     data_dir = pkg_resources.resource_filename('endocal', join('data', dataset_desc))
     __run(video_source_desc=join(data_dir, file_wildcard),
+          max_num_frames=10,
           roi=None,
           pattern_specs=[3, 11, 3, 1],
           calibration_file=None,

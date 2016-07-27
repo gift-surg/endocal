@@ -258,9 +258,6 @@ class Calibrator:
         otherwise, in addition to detected circle grid
         of blobs
         """
-        if len(self.grid_candidates) >= Calibrator.MIN_FRAME_COUNT:
-            return False, None
-
         blobs = None
         ret, blobs = findCirclesGrid(image, self.pattern_dims,
                                      blobs, CALIB_CB_ASYMMETRIC_GRID)
