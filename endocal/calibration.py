@@ -210,6 +210,8 @@ class Calibrator:
             calibrateCamera(objectPoints=self.grids,
                             imagePoints=self.grid_candidates,
                             imageSize=self.image_size,
+                            cameraMatrix=None,
+                            distCoeffs=None,
                             flags=CALIB_FIX_K4 |
                             CALIB_FIX_K5 |
                             CALIB_ZERO_TANGENT_DIST)
