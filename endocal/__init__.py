@@ -140,7 +140,7 @@ def main():
 
 def test():
     dataset_desc = 'sample_001'
-    file_wildcard = 'frame_%3d.jpg'
+    file_wildcard = 'frame_%03d.jpg'
     data_dir = pkg_resources.resource_filename('endocal', join('data', dataset_desc))
     __run(video_source_desc=join(data_dir, file_wildcard),
           max_num_frames=10,

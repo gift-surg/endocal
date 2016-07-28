@@ -38,7 +38,7 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 
 * Using all frames stored as indexed files e.g. `frame_009.jpg`:
 ```
-endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%3d.jpg
+endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%03d.jpg
 ```
 
 * Using online video stream from a frame-grabber (attached to an endoscope) that is mounted as `/dev/video0` on Linux:
