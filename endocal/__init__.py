@@ -81,6 +81,7 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                 calibrator.reset()
                 state.acquiring()
             elif state.is_acquiring():
+                num_frames = 0
                 if calibrator.can():
                     calibrator.start(file_io.calibration())
                     state.calibrating()
@@ -89,6 +90,7 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                     state.correcting()
         elif 0xFF & key == KEY_ABORT_ACQUISITION:
             if state.is_acquiring():
+                num_frames = 0
                 calibrator.reset()
                 state.correcting()
 
