@@ -21,7 +21,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='16.07.28rc7',
+    version='16.07.28rc8',
 
     description='A compact GUI application for optical distortion calibration of endoscopes',
     long_description=long_description,
@@ -79,9 +79,6 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=['PyYAML', 'numpy'],
-
-    # External dependencies not on PyPI
-    dependency_links=['http://opencv.org/'],
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these

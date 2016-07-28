@@ -1,8 +1,16 @@
 #!/usr/bin/env python
 
+try:
+    from cv2 import VideoCapture, imshow, waitKey,\
+        putText, FONT_HERSHEY_PLAIN, drawChessboardCorners
+except ImportError as e:
+    print('OpenCV does not seem to be installed on your system.')
+    print('See http://opencv.org for how to install it.')
+    print('The detailed error message was:')
+    print(e.message)
+    quit()
+
 from argparse import ArgumentParser
-from cv2 import VideoCapture, imshow, waitKey, putText, FONT_HERSHEY_PLAIN,\
-    drawChessboardCorners
 from numpy import zeros, uint8
 import pkg_resources
 from os.path import join
