@@ -13,9 +13,9 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 * Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
 # System requirements
-* [OpenCV 2.4](http://docs.opencv.org/2.4/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html)
+* [OpenCV](http://opencv.org/)
 * [pip](https://pip.pypa.io/en/stable/installing/)
-* For online calibration, frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture)
+* For online calibration: frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/) (see esp. the tutorials related to reading video IO tutorials of OpenCV)
 
 # Installation
 1. Install endocal by running `pip install endocal`.
