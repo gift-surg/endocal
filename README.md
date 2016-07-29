@@ -60,4 +60,8 @@ dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
 
 # Supported platforms
-endocal was tested only on Linux (Ubuntu 14.04 LTS) so far. However it is highly likely that it will work on other platforms as well, due to the small number of dependencies.
+endocal was tested so far on:
+* Linux: Ubuntu 14.04 LTS and elementary OS Freya
+* Mac OS X: El Capitan 10.11.3
+
+It is highly likely that it will work on other platforms as well, due to the small number of dependencies.
