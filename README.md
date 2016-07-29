@@ -15,7 +15,7 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 # System requirements
 * [OpenCV](http://opencv.org/)
 * [pip](https://pip.pypa.io/en/stable/installing/)
-* For online calibration: frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/) (see esp. the tutorials related to reading video IO tutorials of OpenCV)
+* For online calibration: frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/) (see esp. the OpenCV tutorials related to video IO)
 
 # Installation
 1. Install endocal by running `pip install endocal`.
