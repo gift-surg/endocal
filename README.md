@@ -18,7 +18,8 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 * For online calibration, frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture)
 
 # Installation
-If you encounter any issues during installation and/or use, check [these hings](doc/issues.md), where your problem might be addressed.
+**Note:** If you encounter any issues during installation and/or use, check [these hints](doc/issues.md), where your problem might be addressed.
+
 1. Install endocal by running `pip install endocal`.
 1. Test your installation by running `endocal-test`:
    * See [this screenshot](endocal/res/screenshot-start.png) for what to expect on launching the application.
