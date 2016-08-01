@@ -109,6 +109,7 @@ def main():
     # parse arguments
     parser = ArgumentParser()
     parser.add_argument('--input', type=str,
+                        metavar='ENDOSCOPE_DATA_SOURCE',
                         help='Video file, video folder or device id (e.g. 1 for /dev/video1)',
                         required=True)
     parser.add_argument('--calibration-file', type=str,
@@ -118,9 +119,11 @@ def main():
                         help='Where to log results',
                         required=True)
     parser.add_argument('--roi', nargs=4, type=int,
+                        metavar=('X', 'Y', 'WIDTH', 'HEIGHT'),
                         help='Sub-frame specs: <x> <y> <width> <height>',
                         required=False)
     parser.add_argument('--pattern-specs', nargs=4, type=float,
+                        metavar=('ROWS', 'COLS', 'ROW_SPACING', 'COL_SPACING'),
                         help='Calibration pattern dimensions: <rows> <cols> '
                              '<row_spacing> <col_spacing> (rows a.k.a. width, '
                              'cols a.k.a. height)',
