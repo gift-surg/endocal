@@ -1,4 +1,4 @@
-Here we highlight the issues encountered during installation / use of endocal, together with possible solutions. If you experience other issues, please report those by opening a new issue on the issue tracker.
+Below are some problems we encountered while testing endocal, together with a possible solution to each. If you experience others, please report them by opening a new issue on the project's issue tracker.
 
 ### PyYAML problems
 
@@ -22,7 +22,7 @@ error: [WinError 2] The system cannot find the file specified
 
 Solution:
 
-1. Download the wheel (e.g. `PyYAML-3.11-cp27-cp27m-win_amd64.whl` - choose the right one by inspecting the Python and platform version encoded in the file name) from the [Unofficial Windows Binaries for Python Extension Packages](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyyaml).
+1. Download the wheel (e.g. `PyYAML-3.11-cp27-cp27m-win_amd64.whl` (choose the right one for your system by inspecting the Python and platform version encoded in the file name) from the [Unofficial Windows Binaries for Python Extension Packages](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyyaml).
 1. Install the downloaded wheel, e.g. `pip install PyYAML-3.11-cp27-cp27m-win_amd64.whl`.
 
 ### ImportError: numpy.core.multiarray failed to import
