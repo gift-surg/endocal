@@ -1,2 +1,5 @@
-include README.md
-include LICENSE
+# not only README, but any other MD docs as well
+recursive-include * *.md
+
+# licence files of any other included packages
+recursive-include * LICENSE
