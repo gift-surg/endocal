@@ -31,7 +31,7 @@ def __frame_size(video_source_desc):
 
 
 def __run(video_source_desc, roi, pattern_specs, calibration_file,
-          output_folder, max_num_frames = float('inf')):
+          output_folder, max_num_frames=float('inf')):
     full = __frame_size(video_source_desc)
     if roi is None:
         roi = full
