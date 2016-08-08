@@ -69,8 +69,10 @@ Supported platforms
 -------------------
 
 endocal was tested so far on:
-* Linux: Ubuntu 14.04 LTS and elementary OS Freya
+
+* Linux: Ubuntu 14.04.3 LTS 64-bit, elementary OS Freya 0.3.2 64-bit
 * Mac OS X: El Capitan 10.11.3
+* Windows: 10 Professional 64-bit
 
 It is highly likely that it will work on other platforms as well, due to the small number of dependencies.
 
