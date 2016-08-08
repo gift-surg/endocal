@@ -3,12 +3,12 @@ endocal
 
 endocal is a compact GUI application for optical distortion calibration of endoscopes. It uses the [OpenCV camera calibration module](http://docs.opencv.org/2.4/doc/tutorials/calib3d/camera_calibration/camera_calibration.html) under the hood.
 
-endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project](http://www.gift-surg.ac.uk/) at the [Translational Imaging Group](http://cmictig.cs.ucl.ac.uk/) in the [Centre for Medical Image Computing](http://www.ucl.ac.uk/cmic/homepage) at [University College London (UCL)](http://www.ucl.ac.uk/).
+endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at [University College London (UCL)][ucl].
 
 License
 -------
 
-Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal is available as free open-source software under a BSD 3-Clause Licence.
+Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a BSD 3-Clause Licence.
 
 Features
 --------
@@ -73,3 +73,18 @@ endocal was tested so far on:
 * Mac OS X: El Capitan 10.11.3
 
 It is highly likely that it will work on other platforms as well, due to the small number of dependencies.
+
+Funding
+-------
+
+This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust] [WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a [National Institute for Health Research][nihr] Biomedical Research Centre [UCLH][uclh]/UCL High Impact Initiative.
+
+
+[tig]: http://cmictig.cs.ucl.ac.uk
+[giftsurg]: http://www.gift-surg.ac.uk
+[cmic]: http://cmic.cs.ucl.ac.uk
+[ucl]: http://www.ucl.ac.uk
+[nihr]: http://www.nihr.ac.uk/research
+[uclh]: http://www.uclh.nhs.uk
+[epsrc]: http://www.epsrc.ac.uk
+[wellcometrust]: http://www.wellcome.ac.uk
