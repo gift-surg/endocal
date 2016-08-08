@@ -1,7 +1,7 @@
 endocal
 -------
 
-endocal is a compact GUI application for optical distortion calibration of endoscopes. It uses the [OpenCV camera calibration module](http://docs.opencv.org/2.4/doc/tutorials/calib3d/camera_calibration/camera_calibration.html) under the hood.
+endocal is a compact GUI application for optical distortion calibration of endoscopes. It uses the [OpenCV][opencv] camera calibration module.
 
 endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at [University College London (UCL)][ucl].
 
@@ -19,9 +19,9 @@ Features
 System requirements
 -------------------
 
-* [OpenCV](http://opencv.org/)
+* [OpenCV][opencv]
 * [pip](https://pip.pypa.io/en/stable/installing/)
-* For online calibration: frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/) (see esp. the OpenCV tutorials related to video IO)
+* (Online calibration) Video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related to video IO)
 
 Installation
 ------------
@@ -88,3 +88,5 @@ This work was supported through an Innovative Engineering for Health award by th
 [uclh]: http://www.uclh.nhs.uk
 [epsrc]: http://www.epsrc.ac.uk
 [wellcometrust]: http://www.wellcome.ac.uk
+[opencv]: http://opencv.org/
+[opencv_docs]: http://docs.opencv.org/
