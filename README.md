@@ -13,9 +13,9 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 * Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
 # System requirements
-* [OpenCV 2.4](http://docs.opencv.org/2.4/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html)
+* [OpenCV](http://opencv.org/)
 * [pip](https://pip.pypa.io/en/stable/installing/)
-* For online calibration, frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture)
+* For online calibration: frame-grabber hardware supported by [OpenCV](http://docs.opencv.org/) (see esp. the OpenCV tutorials related to video IO)
 
 # Installation
 1. Install endocal by running `pip install endocal`.
@@ -38,7 +38,7 @@ Copyright (c) 2016, [University College London](http://www.ucl.ac.uk/). endocal 
 
 * Using all frames stored as indexed files e.g. `frame_009.jpg`:
 ```
-endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%3d.jpg
+endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%03d.jpg
 ```
 
 * Using online video stream from a frame-grabber (attached to an endoscope) that is mounted as `/dev/video0` on Linux:
@@ -60,4 +60,8 @@ dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
 
 # Supported platforms
-endocal was tested only on Linux (Ubuntu 14.04 LTS) so far. However it is highly likely that it will work on other platforms as well, due to the small number of dependencies.
+endocal was tested so far on:
+* Linux: Ubuntu 14.04 LTS and elementary OS Freya
+* Mac OS X: El Capitan 10.11.3
+
+It is highly likely that it will work on other platforms as well, due to the small number of dependencies.

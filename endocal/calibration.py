@@ -1,4 +1,4 @@
-from cv2 import findCirclesGrid, SimpleBlobDetector,\
+from cv2 import __version__, findCirclesGrid,\
     CALIB_CB_ASYMMETRIC_GRID, calibrateCamera, undistort,\
     imwrite, CALIB_FIX_K4, CALIB_FIX_K5, CALIB_ZERO_TANGENT_DIST
 from yaml import dump
@@ -9,6 +9,15 @@ from os.path import join, isdir
 from os import makedirs
 from random import choice
 from string import ascii_uppercase
+opencv_version = -1
+if __version__.startswith('2'):
+    opencv_version = 2
+    from cv2 import SimpleBlobDetector
+elif __version__.startswith('3'):
+    opencv_version = 3
+    from cv2 import SimpleBlobDetector_create
+else:
+    raise RuntimeError('OpenCV version not supported')
 
 
 class State:
@@ -125,7 +134,10 @@ class Calibrator:
         """
         self.pattern_dims = tuple(int(val) for val in pattern_specs[:2])
         self.pattern_spacing = pattern_specs[2:]
-        self.detector = SimpleBlobDetector()
+        if opencv_version == 2:
+            self.detector = SimpleBlobDetector()
+        elif opencv_version == 3:
+            self.detector = SimpleBlobDetector_create()
         d_y = self.pattern_spacing[0]  # 3.0
         d_x = self.pattern_spacing[1]  # 1.0
         width = int(pattern_specs[0])
@@ -198,6 +210,8 @@ class Calibrator:
             calibrateCamera(objectPoints=self.grids,
                             imagePoints=self.grid_candidates,
                             imageSize=self.image_size,
+                            cameraMatrix=None,
+                            distCoeffs=None,
                             flags=CALIB_FIX_K4 |
                             CALIB_FIX_K5 |
                             CALIB_ZERO_TANGENT_DIST)
