@@ -9,11 +9,16 @@ from setuptools import setup
 from codecs import open
 from os import path
 
-here = path.abspath(path.dirname(__file__))
+doc_dir = path.abspath(path.join(path.dirname(__file__), 'doc'))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+# Get the summary
+with open(path.join(doc_dir, 'summary.txt'), encoding='utf-8') as f:
+    summary = f.read()
+
+# Get the long description
+with open(path.join(doc_dir, 'description.txt'), encoding='utf-8') as f:
+    description = f.read()
+    long_description = '%s\n\n%s' % (summary, description)
 
 setup(
     name='endocal',
@@ -23,7 +28,7 @@ setup(
     # https://packaging.python.org/en/latest/single_source_version.html
     version='16.07.28rc8',
 
-    description='A compact GUI application for optical distortion calibration of endoscopes',
+    description=summary,
     long_description=long_description,
 
     # The project's main homepage.
