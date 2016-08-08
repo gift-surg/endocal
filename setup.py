@@ -49,6 +49,8 @@ setup(
         'Intended Audience :: Healthcare Industry',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
         'Topic :: Scientific/Engineering :: Image Recognition',
+        'Topic :: Multimedia :: Graphics',
+        'Topic :: Multimedia :: Video :: Capture',
 
         # Pick your license as you wish (should match "license" above)
         'License :: OSI Approved :: BSD License',
