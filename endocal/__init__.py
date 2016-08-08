@@ -14,7 +14,7 @@ from argparse import ArgumentParser
 from numpy import zeros, uint8
 import pkg_resources
 from os.path import join
-import calibration
+import endocal.calibration as calibration
 
 KEY_QUIT = 27
 KEY_TOGGLE_ACQUISITION = ord(calibration.State.KEYS[calibration.State.ACQUIRING])

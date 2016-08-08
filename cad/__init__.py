@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from argparse import ArgumentParser
-import dxf
+import cad.dxf as dxf
 
 
 def generate_dxf():
