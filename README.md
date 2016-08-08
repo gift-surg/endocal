@@ -1,7 +1,7 @@
 endocal
 -------
 
-endocal is a compact GUI application for optical distortion calibration of endoscopes. It uses the [OpenCV][opencv] camera calibration module.
+endocal is a cross-platform, compact GUI application for optical distortion calibration of endoscopes. It uses the [OpenCV][opencv] camera calibration module.
 
 endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at [University College London (UCL)][ucl].
 
@@ -23,24 +23,23 @@ System requirements
 * [pip](https://pip.pypa.io/en/stable/installing/)
 * (Online calibration) Video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related to video IO)
 
-Installation
-------------
+How to install / remove
+-----------------------
 
 **Note:** Please check out [these hints](doc/issues.md) if you encounter any issues with endocal.
 
-1. Install endocal by running `pip install endocal`.
-1. Test your installation by running `endocal-test`:
-   * See [this screenshot](endocal/res/screenshot-start.png) for what to expect on launching the application.
-   * To perform an optical distortion calibration, follow the instructions shown in red on top of the window. While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as in [this screenshot](endocal/res/screenshot-detection.png).
-   * All data for each calibration will be saved in the sub-folder of a folder called `tmp-sample_001`, created within the current folder. These include:
-      * Calibration parameters saved as `calibration.yml`
-      * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
-   * After performing a calibration, the application will automatically show the undistorted images to the right as shown in [this screenshot](endocal/res/screenshot-undistort.png).
+To install: `pip install endocal`.
 
-Removing
---------
+To test your installation type: `endocal-test`:
 
-`pip uninstall endocal`
+* See [this screenshot](endocal/res/screenshot-start.png) for what to expect on launching the application.
+* To perform an optical distortion calibration, follow the instructions shown in red on top of the window. While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as in [this screenshot](endocal/res/screenshot-detection.png).
+* All data for each calibration will be saved in the sub-folder of a folder called `tmp-sample_001`, created within the current folder. These include:
+  * Calibration parameters saved as `calibration.yml`
+  * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
+* After performing a calibration, the application will automatically show the undistorted images to the right as shown in [this screenshot](endocal/res/screenshot-undistort.png).
+
+To remove: `pip uninstall endocal`.
 
 How to use
 ----------
