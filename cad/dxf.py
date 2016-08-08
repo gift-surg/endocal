@@ -77,7 +77,7 @@ def grid(laser_beam_width, diameter):
 
     # now we shift paradigm: width becomes rows, height cols
     num_rows = 2 * width
-    num_cols_even = height / 2
+    num_cols_even = height // 2
     num_cols_odd = num_cols_even + 1
 
     # first and last line coordinates

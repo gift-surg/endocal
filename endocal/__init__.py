@@ -7,14 +7,14 @@ except ImportError as e:
     print('OpenCV does not seem to be installed on your system.')
     print('See http://opencv.org for how to install it.')
     print('The detailed error message was:')
-    print(e.message)
+    print(str(e))
     quit()
 
 from argparse import ArgumentParser
 from numpy import zeros, uint8
 import pkg_resources
 from os.path import join
-import calibration
+import endocal.calibration as calibration
 
 KEY_QUIT = 27
 KEY_TOGGLE_ACQUISITION = ord(calibration.State.KEYS[calibration.State.ACQUIRING])

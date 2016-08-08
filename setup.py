@@ -74,6 +74,8 @@ setup(
     # https://docs.python.org/2/distutils/setupscript.html#installing-package-data
     package_dir={'endocal': 'endocal', 'cad': 'cad'},
 
+    py_modules=['endocal.calibration', 'cad.dxf'],
+
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
