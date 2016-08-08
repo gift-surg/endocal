@@ -55,10 +55,11 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python',
 
-        # Currently tested only on Ubuntu 14.04 LTS
         'Operating System :: POSIX :: Linux',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: Microsoft :: Windows',
     ],
 
     # What does your project relate to?
