@@ -41,7 +41,8 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                                         file_path=calibration_file,
                                         # i.e. None handled internally:
                                         roi=roi,
-                                        full=full)
+                                        full=full,
+                                        max_frame_count=max_num_frames)
     state = calibration.State(calibrator)
     source = VideoCapture(video_source_desc)
     file_io = calibration.FileIO(output_folder)
@@ -64,11 +65,10 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
             if ret:
                 frame[0:roi[3], roi[2]:2*roi[2]] = corrected_image
         elif state.is_acquiring():
-            if num_frames < max_num_frames:
-                ret, blobs = calibrator.append(image, file_io.next_image())
-                if ret:
-                    num_frames += 1
-                    drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
+            ret, blobs = calibrator.append(image, file_io.next_image())
+            if ret:
+                num_frames += 1
+                drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
         elif state.is_calibrating():
             if calibrator.done():
                 state.correcting()

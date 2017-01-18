@@ -101,6 +101,9 @@ class State:
             msg += ' frames '
             msg += '(min: '
             msg += str(Calibrator.MIN_FRAME_COUNT)
+            if self.calibrator.max_frame_count < float('inf'):
+                msg += ', will use '
+                msg += str(self.calibrator.max_frame_count)
             msg += '), '
             if num_frames >= Calibrator.MIN_FRAME_COUNT:
                 msg += State.KEYS[State.CALIBRATING]
@@ -123,7 +126,8 @@ class Calibrator:
 
     """
 
-    def __init__(self, pattern_specs, full, file_path=None, roi=None):
+    def __init__(self, pattern_specs, full, file_path=None, roi=None,
+        max_frame_count=float('inf')):
         """
 
         :param pattern_specs: Specs of used calibration
@@ -131,6 +135,10 @@ class Calibrator:
         :param full: Full frame specs: ``x, y, width, height``
         :param file_path: YAML file with calibration params
         :param roi: Sub frame specs: ``x, y, width, height``
+        :param max_frame_count: Maximum number of frames to
+        use for calibration. If this is specified, collected
+        frames are uniformly sub-sampled, i.e. without any
+        quality assessment.
         """
         self.pattern_dims = tuple(int(val) for val in pattern_specs[:2])
         self.pattern_spacing = pattern_specs[2:]
@@ -154,6 +162,7 @@ class Calibrator:
         self.camera_matrix = None
         self.dist_coeffs = None
         Calibrator.MIN_FRAME_COUNT = 10
+        self.max_frame_count = max_frame_count
         self.calibration_thread = None
         self.roi = full
         if roi is not None:
@@ -206,9 +215,17 @@ class Calibrator:
 
         :param file_path: Where to save resulting calibration
         """
+        num_frames = len(self.grid_candidates)
+        if num_frames > self.max_frame_count:
+            step = int(round(num_frames / self.max_frame_count))
+            grids = self.grids[::step][:self.max_frame_count]
+            grid_candidates = self.grid_candidates[::step][:self.max_frame_count]
+        else:
+            grids = self.grids
+            grid_candidates = self.grid_candidates
         ret, camera_matrix, dist_coeffs, rvecs, tvecs = \
-            calibrateCamera(objectPoints=self.grids,
-                            imagePoints=self.grid_candidates,
+            calibrateCamera(objectPoints=grids,
+                            imagePoints=grid_candidates,
                             imageSize=self.image_size,
                             cameraMatrix=None,
                             distCoeffs=None,
