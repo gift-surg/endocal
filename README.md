@@ -57,6 +57,7 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 ```
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 ```
+* To limit the number of frames used for calibration, append the `--max-frames` option, e.g. `--max-frames=25`. If this option is used, only the very first (e.g. `25`) frames are used.
 
 **ASCII DXF file generation:** For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser cutter with a beam width of `45 μm` (microns):
 ```

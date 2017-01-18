@@ -125,6 +125,9 @@ def main():
                              '<row_spacing> <col_spacing> (rows a.k.a. width, '
                              'cols a.k.a. height)',
                         required=True)
+    parser.add_argument('--max-frames', type=int,
+                        help='Maximum number of frames to use for calibration',
+                        default=float('inf'))
     args = parser.parse_args()
 
     # do work
@@ -135,7 +138,7 @@ def main():
 
     __run(video_source_desc=video_source_desc, roi=args.roi,
           pattern_specs=args.pattern_specs, calibration_file=args.calibration_file,
-          output_folder=args.output_folder)
+          output_folder=args.output_folder, max_num_frames=args.max_frames)
 
 
 def test():
