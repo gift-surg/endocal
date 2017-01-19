@@ -2,7 +2,9 @@
 
 try:
     from cv2 import VideoCapture, imshow, waitKey,\
-        putText, FONT_HERSHEY_PLAIN, drawChessboardCorners
+        putText, FONT_HERSHEY_PLAIN, drawChessboardCorners,\
+        setMouseCallback, namedWindow, destroyAllWindows,\
+        EVENT_LBUTTONDOWN, EVENT_LBUTTONUP, EVENT_RBUTTONDOWN
 except ImportError as e:
     print('OpenCV does not seem to be installed on your system.')
     print('See http://opencv.org for how to install it.')
@@ -20,6 +22,40 @@ KEY_QUIT = 27
 KEY_TOGGLE_ACQUISITION = ord(calibration.State.KEYS[calibration.State.ACQUIRING])
 KEY_ABORT_ACQUISITION = ord(calibration.State.KEYS[calibration.State.CORRECTING])
 
+state = None
+file_io = None
+source = None
+calibrator = None
+num_frames = None
+video_source_desc_ = None
+
+def process_clicks(event, x, y, flags, param):
+    # if the left mouse button was clicked, record the starting
+    # (x, y) coordinates and indicate that cropping is being
+    # performed
+    global state, file_io, source, calibrator, num_frames, video_source_desc_
+    if event == EVENT_LBUTTONDOWN:
+        if state.is_correcting():
+            file_io.new_session()
+            source.release()
+            source = VideoCapture(video_source_desc_)
+            calibrator.reset()
+            state.acquiring()
+        elif state.is_acquiring():
+            num_frames = 0
+            if calibrator.can():
+                calibrator.start(file_io.calibration())
+                state.calibrating()
+            else:
+                calibrator.reset()
+                state.correcting()
+
+    # check to see if the left mouse button was released
+    elif event == EVENT_RBUTTONDOWN:
+        if state.is_acquiring():
+                num_frames = 0
+                calibrator.reset()
+                state.correcting()
 
 def __frame_size(video_source_desc):
     cap = VideoCapture(video_source_desc)
@@ -32,6 +68,11 @@ def __frame_size(video_source_desc):
 
 def __run(video_source_desc, roi, pattern_specs, calibration_file,
           output_folder, max_num_frames = float('inf')):
+
+    window_title = 'endocal   |   Sterility-preserving optical distortion calibration'
+    namedWindow(window_title)
+    setMouseCallback(window_title, process_clicks)
+
     full = __frame_size(video_source_desc)
     if roi is None:
         roi = full
@@ -43,6 +84,8 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                                         roi=roi,
                                         full=full,
                                         max_frame_count=max_num_frames)
+    global state, file_io, source, calibrator, num_frames, video_source_desc_
+    video_source_desc_ = video_source_desc
     state = calibration.State(calibrator)
     source = VideoCapture(video_source_desc)
     file_io = calibration.FileIO(output_folder)
@@ -75,7 +118,7 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
 
         frame[0:roi[3], 0:roi[2]] = image
         putText(frame, state.what(), (30, 30), FONT_HERSHEY_PLAIN, 2, (0, 0, 255))
-        imshow('Optical distortion calibration', frame)
+        imshow(window_title, frame)
 
         # user input
         key = waitKey(50)
@@ -103,6 +146,7 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                 state.correcting()
 
     source.release()
+    destroyAllWindows()
 
 
 def main():
