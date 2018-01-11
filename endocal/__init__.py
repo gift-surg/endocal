@@ -65,8 +65,10 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                 frame[0:roi[3], roi[2]:2*roi[2]] = corrected_image
         elif state.is_acquiring():
             if num_frames < max_num_frames:
-                ret, blobs = calibrator.append(image, file_io.next_image())
+                file_path = file_io.next_image()
+                ret, blobs = calibrator.append(image, file_path)
                 if ret:
+                    print('file path = {}, num_frames = {}'.format(file_path, num_frames))
                     num_frames += 1
                     drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
         elif state.is_calibrating():
@@ -144,7 +146,8 @@ def test():
     data_dir = pkg_resources.resource_filename('endocal', join('data', dataset_desc))
     __run(video_source_desc=join(data_dir, file_wildcard),
           max_num_frames=10,
-          roi=None,
+          roi=[130, 0, 538, 710],
+          # roi=None,
           pattern_specs=[3, 11, 3, 1],
           calibration_file=None,
           output_folder='./tmp-' + dataset_desc)
