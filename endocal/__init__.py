@@ -15,6 +15,7 @@ from numpy import zeros, uint8
 import pkg_resources
 from os.path import join
 import endocal.calibration as calibration
+from endocal.utils import check_positive_int
 
 KEY_QUIT = 27
 KEY_TOGGLE_ACQUISITION = ord(calibration.State.KEYS[calibration.State.ACQUIRING])
@@ -125,6 +126,9 @@ def main():
                              '<row_spacing> <col_spacing> (rows a.k.a. width, '
                              'cols a.k.a. height)',
                         required=True)
+    parser.add_argument('--max-views', type=check_positive_int,
+                        help='Maximum number of views to use when calibrating',
+                        required=False, default=float('inf'))
     args = parser.parse_args()
 
     # do work
@@ -135,15 +139,15 @@ def main():
 
     __run(video_source_desc=video_source_desc, roi=args.roi,
           pattern_specs=args.pattern_specs, calibration_file=args.calibration_file,
-          output_folder=args.output_folder)
+          output_folder=args.output_folder, max_num_frames=args.max_views)
 
 
 def test():
-    dataset_desc = 'sample_001'
+    dataset_desc = 'sample_002'
     file_wildcard = 'frame_%03d.jpg'
     data_dir = pkg_resources.resource_filename('endocal', join('data', dataset_desc))
     __run(video_source_desc=join(data_dir, file_wildcard),
-          max_num_frames=10,
+          max_num_frames=11,
           roi=None,
           pattern_specs=[3, 11, 3, 1],
           calibration_file=None,

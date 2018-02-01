@@ -276,7 +276,8 @@ class Calibrator:
         ret, blobs = findCirclesGrid(image, self.pattern_dims,
                                      blobs, CALIB_CB_ASYMMETRIC_GRID)
         if ret:
-            self.image_size = image.shape[:2]  # TODO what about the -1 I saw in sample code?
+            self.image_size = image.shape[:2]
+            self.image_size = self.image_size[::-1]
             self.grid_candidates.append(blobs)
             self.grids.append(self.grid)
 
