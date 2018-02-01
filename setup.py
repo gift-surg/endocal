@@ -93,7 +93,7 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
-    package_data={'endocal': ['data/sample_001/*'],
+    package_data={'endocal': ['data/sample_001/*', 'data/sample_002/*'],
                   'cad': ['data/dxf/header.dxf', 'data/dxf/footer.dxf',
                           'data/dxf/polyline.dxf', 'data/dxf/seqend.dxf']},
 
