@@ -34,7 +34,8 @@ To test your installation type: `endocal-test`:
 
 * See [this screenshot](endocal/res/screenshot-start.png) for what to expect on launching the application.
 * To perform an optical distortion calibration, follow the instructions shown in red on top of the window. While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as in [this screenshot](endocal/res/screenshot-detection.png).
-* All data for each calibration will be saved in the sub-folder of a folder called `tmp-sample_001`, created within the current folder. These include:
+* All data for each calibration will be saved in the sub-folder of a folder called `tmp-sample_002`, created within
+the current folder. These include:
   * Calibration parameters saved as `calibration.yml`
   * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
 * After performing a calibration, the application will automatically show the undistorted images to the right as shown in [this screenshot](endocal/res/screenshot-undistort.png).

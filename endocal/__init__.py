@@ -143,11 +143,11 @@ def main():
 
 
 def test():
-    dataset_desc = 'sample_001'
+    dataset_desc = 'sample_002'
     file_wildcard = 'frame_%03d.jpg'
     data_dir = pkg_resources.resource_filename('endocal', join('data', dataset_desc))
     __run(video_source_desc=join(data_dir, file_wildcard),
-          max_num_frames=10,
+          max_num_frames=11,
           roi=None,
           pattern_specs=[3, 11, 3, 1],
           calibration_file=None,
