@@ -153,6 +153,7 @@ class Calibrator:
         self.image_size = None
         self.camera_matrix = None
         self.dist_coeffs = None
+        self.reproj_errs = None
         Calibrator.MIN_FRAME_COUNT = 10
         self.calibration_thread = None
         self.roi = full
@@ -172,6 +173,7 @@ class Calibrator:
         self.image_size = []
         self.camera_matrix = None  # TODO identity
         self.dist_coeffs = None  # TODO identity (??)
+        self.reproj_errs = None
         # TODO
         pass
 
