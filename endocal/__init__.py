@@ -69,11 +69,12 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                 ret, blobs = calibrator.append(image)
                 if ret:
                     num_frames += 1
-                    drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
 
                     file_path = file_io.next_image()
                     if file_path is not None:
                         imwrite(file_path, image)
+
+                    drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
         elif state.is_calibrating():
             if calibrator.done():
                 state.correcting()
