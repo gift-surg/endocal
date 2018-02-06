@@ -66,7 +66,7 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                 frame[0:roi[3], roi[2]:2*roi[2]] = corrected_image
         elif state.is_acquiring():
             if num_frames < max_num_frames:
-                ret, blobs = calibrator.append(image, file_io.next_image())
+                ret, blobs = calibrator.append(image)
                 if ret:
                     num_frames += 1
                     drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)

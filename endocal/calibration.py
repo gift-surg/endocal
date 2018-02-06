@@ -1,6 +1,6 @@
 from cv2 import __version__, findCirclesGrid,\
     CALIB_CB_ASYMMETRIC_GRID, calibrateCamera, undistort,\
-    imwrite, CALIB_FIX_K4, CALIB_FIX_K5, CALIB_ZERO_TANGENT_DIST
+    CALIB_FIX_K4, CALIB_FIX_K5, CALIB_ZERO_TANGENT_DIST
 from yaml import dump
 import numpy as np
 from threading import Thread
@@ -261,13 +261,11 @@ class Calibrator:
 
         return False
 
-    def append(self, image, file_path=None):
+    def append(self, image):
         """Append image as one of frames to be used in
         calibration.
 
         :param image:
-        :param file_path: If passed, `image` is saved
-        here
         :return: ``True`` if `image` usable, ``False``
         otherwise, in addition to detected circle grid
         of blobs
@@ -280,9 +278,6 @@ class Calibrator:
             self.image_size = self.image_size[::-1]
             self.grid_candidates.append(blobs)
             self.grids.append(self.grid)
-
-            if file_path is not None:
-                imwrite(file_path, image)
 
         return ret, blobs
 
