@@ -281,8 +281,8 @@ class Calibrator:
             self.grid_candidates.append(blobs)
             self.grids.append(self.grid)
 
-        if file_path is not None:
-            imwrite(file_path, image)
+            if file_path is not None:
+                imwrite(file_path, image)
 
         return ret, blobs
 
