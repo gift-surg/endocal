@@ -2,7 +2,7 @@
 
 try:
     from cv2 import VideoCapture, imshow, waitKey,\
-        putText, FONT_HERSHEY_PLAIN, drawChessboardCorners
+        imwrite, putText, FONT_HERSHEY_PLAIN, drawChessboardCorners
 except ImportError as e:
     print('OpenCV does not seem to be installed on your system.')
     print('See http://opencv.org for how to install it.')
@@ -66,9 +66,14 @@ def __run(video_source_desc, roi, pattern_specs, calibration_file,
                 frame[0:roi[3], roi[2]:2*roi[2]] = corrected_image
         elif state.is_acquiring():
             if num_frames < max_num_frames:
-                ret, blobs = calibrator.append(image, file_io.next_image())
+                ret, blobs = calibrator.append(image)
                 if ret:
                     num_frames += 1
+
+                    file_path = file_io.next_image()
+                    if file_path is not None:
+                        imwrite(file_path, image)
+
                     drawChessboardCorners(image, calibrator.pattern_dims, blobs, ret)
         elif state.is_calibrating():
             if calibrator.done():
