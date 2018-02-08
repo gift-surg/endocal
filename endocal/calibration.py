@@ -237,12 +237,12 @@ class Calibrator:
 
                 err += pv_err_sq
                 num_pts += pv_num_pts
-            avg_reproj_err = np.sqrt(err / num_pts)
             if file_path is not None:
                 calibration_file = open(file_path, 'w')
                 calibration = dict(camera_matrix=str(self.camera_matrix),
                                    dist_coeffs=str(self.dist_coeffs),
                                    per_view_reproj_errs=str(self.avg_reproj_errs),
+                                   reproj_err=ret,
                                    roi=str(self.roi),
                                    full=str(self.full))
                 calibration_file.write(dump(calibration,
