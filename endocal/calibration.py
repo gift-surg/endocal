@@ -1,6 +1,6 @@
 from cv2 import __version__, findCirclesGrid,\
     CALIB_CB_ASYMMETRIC_GRID, calibrateCamera, undistort,\
-    CALIB_FIX_K4, CALIB_FIX_K5, CALIB_ZERO_TANGENT_DIST
+    CALIB_FIX_K4, CALIB_FIX_K5, CALIB_ZERO_TANGENT_DIST, projectPoints
 from yaml import dump
 import numpy as np
 from threading import Thread
@@ -220,10 +220,29 @@ class Calibrator:
         if ret:
             self.camera_matrix = camera_matrix
             self.dist_coeffs = dist_coeffs
+            self.avg_reproj_errs = np.full((len(self.grids),), np.inf)
+            err = 0
+            num_pts = 0
+            # pv = per-view
+            for v, (pv_obj_pts, pv_img_pts, pv_rvec, pv_tvec) in enumerate(zip(self.grids, self.grid_candidates,
+                                                                               rvecs, tvecs)):
+                pv_proj_img_pts, jacobians = projectPoints(
+                    objectPoints=pv_obj_pts, rvec=pv_rvec, tvec=pv_tvec,
+                    cameraMatrix=self.camera_matrix, distCoeffs=self.dist_coeffs)
+                pv_reproj_errs = list(map(lambda img_pt, proj_img_pt: np.linalg.norm(img_pt - proj_img_pt),
+                                          pv_img_pts, pv_proj_img_pts))
+                pv_err_sq = np.dot(pv_reproj_errs, pv_reproj_errs)
+                pv_num_pts = len(pv_reproj_errs)
+                self.avg_reproj_errs[v] = np.sqrt(pv_err_sq / pv_num_pts)
+
+                err += pv_err_sq
+                num_pts += pv_num_pts
+            avg_reproj_err = np.sqrt(err / num_pts)
             if file_path is not None:
                 calibration_file = open(file_path, 'w')
                 calibration = dict(camera_matrix=str(self.camera_matrix),
                                    dist_coeffs=str(self.dist_coeffs),
+                                   per_view_reproj_errs=str(self.avg_reproj_errs),
                                    roi=str(self.roi),
                                    full=str(self.full))
                 calibration_file.write(dump(calibration,
