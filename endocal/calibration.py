@@ -220,7 +220,7 @@ class Calibrator:
         if ret:
             self.camera_matrix = camera_matrix
             self.dist_coeffs = dist_coeffs
-            self.avg_reproj_errs = np.full((len(self.grids),), np.inf)
+            self.reproj_errs = np.full((len(self.grids),), np.inf)
             err = 0
             num_pts = 0
             # pv = per-view
@@ -233,7 +233,7 @@ class Calibrator:
                                           pv_img_pts, pv_proj_img_pts))
                 pv_err_sq = np.dot(pv_reproj_errs, pv_reproj_errs)
                 pv_num_pts = len(pv_reproj_errs)
-                self.avg_reproj_errs[v] = np.sqrt(pv_err_sq / pv_num_pts)
+                self.reproj_errs[v] = np.sqrt(pv_err_sq / pv_num_pts)
 
                 err += pv_err_sq
                 num_pts += pv_num_pts
@@ -241,7 +241,7 @@ class Calibrator:
                 calibration_file = open(file_path, 'w')
                 calibration = dict(camera_matrix=str(self.camera_matrix),
                                    dist_coeffs=str(self.dist_coeffs),
-                                   per_view_reproj_errs=str(self.avg_reproj_errs),
+                                   per_view_reproj_errs=str(self.reproj_errs),
                                    reproj_err=ret,
                                    roi=str(self.roi),
                                    full=str(self.full))
