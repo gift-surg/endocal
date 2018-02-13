@@ -100,7 +100,7 @@ Calibration
   endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%03d.jpg
 
 * Live calibration using a real-time video stream from an endoscope provided by a frame-grabber (assuming the 
-frame-grabber is `mounted`_ as ``/dev/video0``):
+  frame-grabber is `mounted`_ as ``/dev/video0``):
 
 .. code-block:: sh
 
