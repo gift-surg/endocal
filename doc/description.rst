@@ -93,24 +93,24 @@ Calibration
 
 * Offline calibration by using all frames saved as indexed image files in a ``/data/offline`` folder:
 
-```sh
-endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%03d.jpg
-```
+.. code-block:: sh
+
+  endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%03d.jpg
 
 * Live calibration using a real-time video stream from an endoscope provided by a frame-grabber (assuming the 
 frame-grabber is `mounted`_ as ``/dev/video0``):
 
-```sh
-endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
-```
+.. code-block:: sh
+
+  endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 
 .. _`mounted`: https://help.ubuntu.com/community/Webcam
 
 * Using a ``700 x 700`` sub-frame of the whole endoscopic video frame (whose full size is e.g. ``1920 x 1080``):
 
-```sh
-endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
-```
+.. code-block:: sh
+
+  endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 
 ASCII DXF file generation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,9 +120,9 @@ ASCII DXF file generation
 For instance to generate an asymmetric grid of circles each with a diameter of ``1 mm`` to be etched by a laser
 cutter with a beam width of ``45 μm`` (microns):
 
-```sh
-dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
-```
+.. code-block:: sh
+
+  dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 
 Here the grid is saved to file ``output.dxf`` and the corresponding (ellipse) legend to ``output-legend.dxf`` (legend
 filename always inferred from main DXF filename).
