@@ -7,5 +7,9 @@ and this project adheres to [PEP440 date-based versioning][pep440-date].
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [pep440-date]: https://www.python.org/dev/peps/pep-0440/#support-for-date-based-version-identifiers
 
+## [16.08.08]
+
 ## 16.07.22
+
+[16.08.08]: https://github.com/gift-surg/endocal/compare/v16.07.22...v16.08.08
 
