@@ -1,4 +1,5 @@
-# endocal
+endocal
+=======
 
 endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed
 endoscopes. It uses the [OpenCV][opencv] camera calibration module.
@@ -7,13 +8,15 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at
 [University College London (UCL)][ucl].
 
-## Features
+Features
+--------
 
 * Lightweight, compact GUI application for optical distortion calibration of endoscopes
 * Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/)
 for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
-## System requirements
+System requirements
+-------------------
 
 * [Python][python]
 * [pip][pip]
@@ -31,13 +34,16 @@ to video IO)
   - OS X El Capitan 10.11.3
   - Windows 10 Professional 64-bit
 
-## Installation
+Installation
+------------
 
-#### Installing endocal
+Installing endocal
+^^^^^^^^^^^^^^^^^^
 
 `pip install endocal`
 
-#### Testing your installation
+Testing your installation
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Launch the test application by running `endocal-test`:
 * [This screenshot](endocal/res/screenshot-start.png) shows you what to expect on launching the application.
@@ -52,13 +58,16 @@ The saved data includes:
   * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
 * After performing a calibration, the application will automatically show the undistorted images in real time to the right of the application window as in [this screenshot](endocal/res/screenshot-undistort.png).
 
-#### Uninstalling endocal
+Uninstalling endocal
+^^^^^^^^^^^^^^^^^^^^
 
 `pip uninstall endocal`
 
-## Usage
+Usage
+-----
 
-#### Calibration
+Calibration
+^^^^^^^^^^^
 
 `endocal --help` shows details of what input parameters are expected. Some examples are provided below:
 
@@ -81,7 +90,8 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 ```
 
-#### ASCII DXF file generation
+ASCII DXF file generation
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `dxf --help` shows details of what input parameters are expected.
 
@@ -95,16 +105,19 @@ dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend
 filename always inferred from main DXF filename).
 
-#### Troubleshooting
+Troubleshooting
+^^^^^^^^^^^^^^^
 
 Please check out [these hints](doc/issues.md) in case you encounter any issues with endocal.
 
-## Licensing and copyright
+Licensing and copyright
+-----------------------
 
 Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a
 BSD 3-Clause Licence.
 
-## Acknowledgements
+Acknowledgements
+----------------
 
 This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust]
 [WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a
