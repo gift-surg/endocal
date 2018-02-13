@@ -59,7 +59,7 @@ Installing endocal
 Testing your installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Launch the test application by running ``endocal-test``:
+* Launch the test application by running ``endocal-test``.
 * `This screenshot`_ shows you what to expect on launching the application.
 * To perform an optical distortion calibration, follow the instructions shown in red on top of the application window.
 * While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as
