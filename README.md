@@ -1,30 +1,25 @@
-endocal
--------
+# endocal
 
 endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed endoscopes. It uses the [OpenCV][opencv] camera calibration module.
 
 endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at [University College London (UCL)][ucl].
 
-License
--------
+## License
 
 Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a BSD 3-Clause Licence.
 
-Features
---------
+## Features
 
 * Lightweight, compact GUI application for optical distortion calibration of endoscopes
 * Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
-System requirements
--------------------
+## System requirements
 
 * [OpenCV][opencv]
 * [pip](https://pip.pypa.io/en/stable/installing/)
 * (Online calibration) Video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related to video IO)
 
-How to install / remove
------------------------
+## How to install / remove
 
 **Note:** Please check out [these hints](doc/issues.md) if you encounter any issues with endocal.
 
@@ -42,8 +37,7 @@ the current folder. These include:
 
 To remove: `pip uninstall endocal`.
 
-How to use
-----------
+## How to use
 
 **Calibration:** `endocal --help` shows details of what input parameters are expected. Examples include:
 * Using all frames stored as indexed files e.g. `frame_009.jpg`:
@@ -65,8 +59,7 @@ dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 ```
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
 
-Supported platforms
--------------------
+## Supported platforms
 
 endocal was tested so far on:
 
@@ -76,8 +69,7 @@ endocal was tested so far on:
 
 It is highly likely that it will work on other platforms as well, due to the small number of dependencies.
 
-Funding
--------
+## Funding
 
 This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust] [WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a [National Institute for Health Research][nihr] Biomedical Research Centre [UCLH][uclh]/UCL High Impact Initiative.
 
