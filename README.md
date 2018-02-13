@@ -51,24 +51,39 @@ To uninstall endocal: `pip uninstall endocal`
 
 ## Usage
 
-**Calibration:** `endocal --help` shows details of what input parameters are expected. Examples include:
-* Using all frames stored as indexed files e.g. `frame_009.jpg`:
-```
+#### Calibration
+
+`endocal --help` shows details of what input parameters are expected. Some examples are provided below:
+
+* Offline calibration by using all frames saved as indexed image files in a `/data/offline` folder:
+
+```sh
 endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /data/offline/frame_%03d.jpg
 ```
-* Using online video stream from a frame-grabber (attached to an endoscope) that is mounted as `/dev/video0` on Linux:
-```
+
+* Live calibration using a real-time video stream from an endoscope provided by a frame-grabber (assuming the 
+frame-grabber is [mounted as `/dev/video0` on Linux][ubuntu-webcam]):
+
+```sh
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 ```
-* Using a `700 x 700` sub-frame of the whole endoscopic video frame (`1920 x 1080`):
-```
+
+* Using a `700 x 700` sub-frame of the whole endoscopic video frame (whose full size is e.g. `1920 x 1080`):
+
+```sh
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results --roi 620 200 700 700
 ```
 
-**ASCII DXF file generation:** For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser cutter with a beam width of `45 μm` (microns):
-```
+#### ASCII DXF file generation
+
+`dxf --help` shows details of what input parameters are expected.
+
+For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser cutter with a beam width of `45 μm` (microns):
+
+```sh
 dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 ```
+
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
 
 ## Licensing and copyright
@@ -95,3 +110,4 @@ This work was supported through an Innovative Engineering for Health award by th
 [yaml]: http://yaml.org/
 [pyyaml]: https://github.com/yaml/pyyaml
 [numpy]: http://www.numpy.org/
+[ubuntu-webcam]: https://help.ubuntu.com/community/Webcam
