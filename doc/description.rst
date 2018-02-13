@@ -68,8 +68,10 @@ Testing your installation
   folder named ``tmp-sample_002`` created within the folder where the application was launched.
   For instance ``tmp-sample_002/2018-02-08-11-03-19-AHDHO`` for a calibration run on 8 February 2018 at 11:03 am.
   The saved data includes:
+
   * A `YAML`_ file named ``calibration.yml`` with the computed calibration parameters
   * Frames used for calibration saved as indexed image files, e.g. ``frame_009.jpg``
+
 * After performing a calibration, the application will automatically show the undistorted images in real time to the
   right of the application window as in `this undistortion screenshot`_.
 
