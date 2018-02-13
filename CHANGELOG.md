@@ -14,6 +14,10 @@ and this project adheres to [PEP440 date-based versioning][pep440-date].
 ## [16.08.08]
 
 ## 16.07.22
+### Added
+* Optical distortion calibration using OpenCV 2 and Python 2
+* Graphical interface for data acquisition and camera calibration
+* Generation of ASCII DXF files for calibration target fabrication
 
 [Unreleased]: https://github.com/gift-surg/endocal/compare/v18.02.13.dev0...HEAD
 [18.02.13]: https://github.com/gift-surg/endocal/compare/v16.08.08...v18.02.13.dev0
