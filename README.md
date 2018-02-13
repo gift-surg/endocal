@@ -69,7 +69,7 @@ It is highly likely that it will work on other platforms as well, due to the sma
 
 Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a BSD 3-Clause Licence.
 
-## Funding
+## Acknowledgements
 
 This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust] [WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a [National Institute for Health Research][nihr] Biomedical Research Centre [UCLH][uclh]/UCL High Impact Initiative.
 
