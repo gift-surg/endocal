@@ -10,6 +10,15 @@ and this project adheres to [PEP440 date-based versioning][pep440-date].
 ## [Unreleased]
 
 ## [18.02.13]
+### Added
+* Support for specifying the maximum nr. of frames to use for calibration
+* A new sample calibration dataset
+* Support for saving per-view and average re-projection errors
+
+### Fixed
+* Swapped image dimensions when feeding frames into camera calibration
+* Wrong indexing of saved calibration frames
+* Saving of frames not used for calibration
 
 ## [16.08.08]
 ### Added
