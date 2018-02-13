@@ -145,24 +145,12 @@ BSD 3-Clause Licence.
 Acknowledgements
 ----------------
 
-This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust]
-[WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a
-[National Institute for Health Research][nihr] Biomedical Research Centre [UCLH][uclh]/UCL High Impact Initiative.
+This work was supported through an Innovative Engineering for Health award by the `Wellcome Trust`_
+[WT101957], the `Engineering and Physical Sciences Research Council (EPSRC)`_ [NS/A000027/1] and a
+`National Institute for Health Research`_ Biomedical Research Centre `UCLH`_/UCL High Impact Initiative.
 
 
-[tig]: http://cmictig.cs.ucl.ac.uk
-[giftsurg]: http://www.gift-surg.ac.uk
-[cmic]: http://cmic.cs.ucl.ac.uk
-[ucl]: http://www.ucl.ac.uk
-[nihr]: http://www.nihr.ac.uk/research
-[uclh]: http://www.uclh.nhs.uk
-[epsrc]: http://www.epsrc.ac.uk
-[wellcometrust]: http://www.wellcome.ac.uk
-[opencv]: http://opencv.org/
-[opencv_docs]: http://docs.opencv.org/
-[python]: https://www.python.org/
-[pip]: https://pip.pypa.io/en/stable/installing/
-[yaml]: http://yaml.org/
-[pyyaml]: https://github.com/yaml/pyyaml
-[numpy]: http://www.numpy.org/
-[ubuntu-webcam]: https://help.ubuntu.com/community/Webcam
+.. _`National Institute for Health Research`: http://www.nihr.ac.uk/research
+.. _`UCLH`: http://www.uclh.nhs.uk
+.. _`Engineering and Physical Sciences Research Council (EPSRC)`: http://www.epsrc.ac.uk
+.. _`Wellcome Trust`: http://www.wellcome.ac.uk
