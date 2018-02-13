@@ -49,7 +49,7 @@ The saved data includes:
 
 To uninstall endocal: `pip uninstall endocal`
 
-## How to use
+## Usage
 
 **Calibration:** `endocal --help` shows details of what input parameters are expected. Examples include:
 * Using all frames stored as indexed files e.g. `frame_009.jpg`:
