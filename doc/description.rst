@@ -20,7 +20,7 @@ Features
 The detailed changelog is available on `GitHub`_.
 
 .. _`ASCII DXF files`: http://www.autodesk.com/techpubs/autocad/acadr14/dxf/
-.. _`GitHub`: https://github.com/gift-surg/endocal/blob/master/endocal/CHANGELOG.md
+.. _`GitHub`: https://github.com/gift-surg/endocal/blob/master/CHANGELOG.md
 
 System requirements
 -------------------
