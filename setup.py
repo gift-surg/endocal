@@ -12,8 +12,8 @@ from os import path
 doc_dir = path.abspath(path.join(path.dirname(__file__), 'doc'))
 
 # Get the summary
-with open(path.join(doc_dir, 'summary.txt'), encoding='utf-8') as f:
-    summary = f.read()
+summary = 'A cross-platform, compact GUI application for the optical' +\
+          ' distortion calibration of fluid-immersed endoscopes.'
 
 # Get the long description
 with open(path.join(doc_dir, 'description.txt'), encoding='utf-8') as f:
