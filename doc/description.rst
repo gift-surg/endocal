@@ -98,11 +98,13 @@ endocal --pattern-specs 3 11 3 1 --output-folder ./calibration-results --input /
 ```
 
 * Live calibration using a real-time video stream from an endoscope provided by a frame-grabber (assuming the 
-frame-grabber is [mounted as ``/dev/video0`` on Linux][ubuntu-webcam]):
+frame-grabber is `mounted`_ as ``/dev/video0``):
 
 ```sh
 endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 ```
+
+.. _`mounted`: https://help.ubuntu.com/community/Webcam
 
 * Using a ``700 x 700`` sub-frame of the whole endoscopic video frame (whose full size is e.g. ``1920 x 1080``):
 
@@ -128,7 +130,9 @@ filename always inferred from main DXF filename).
 Troubleshooting
 ^^^^^^^^^^^^^^^
 
-Please check out [these hints](doc/issues.md) in case you encounter any issues with endocal.
+Please check out `these hints`_ in case you encounter any issues with endocal.
+
+.. _`these hints`: https://github.com/gift-surg/endocal/blob/master/doc/issues.md
 
 Licensing and copyright
 -----------------------
