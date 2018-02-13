@@ -81,7 +81,7 @@ Testing your installation
 Uninstalling endocal
 ^^^^^^^^^^^^^^^^^^^^
 
-`pip uninstall endocal`
+``pip uninstall endocal``
 
 Usage
 -----
