@@ -15,6 +15,16 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 * [pip](https://pip.pypa.io/en/stable/installing/)
 * (Online calibration) Video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related to video IO)
 
+## Supported platforms
+
+endocal was tested so far on:
+
+* Linux: Ubuntu 14.04.3 LTS 64-bit, elementary OS Freya 0.3.2 64-bit
+* Mac OS X: El Capitan 10.11.3
+* Windows: 10 Professional 64-bit
+
+It is highly likely that it will work on other platforms as well, due to the small number of dependencies.
+
 ## Installation
 
 **Note:** Please check out [these hints](doc/issues.md) if you encounter any issues with endocal.
@@ -54,16 +64,6 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 ```
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
-
-## Supported platforms
-
-endocal was tested so far on:
-
-* Linux: Ubuntu 14.04.3 LTS 64-bit, elementary OS Freya 0.3.2 64-bit
-* Mac OS X: El Capitan 10.11.3
-* Windows: 10 Professional 64-bit
-
-It is highly likely that it will work on other platforms as well, due to the small number of dependencies.
 
 ## Licensing and copyright
 
