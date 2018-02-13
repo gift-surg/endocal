@@ -13,6 +13,10 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 * Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/)
 for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
+The detailed changelog is available on [GitHub][changelog].
+
+[changelog]: CHANGELOG.md
+
 ## System requirements
 
 * [Python][python]
