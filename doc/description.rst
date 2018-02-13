@@ -2,11 +2,18 @@ endocal
 =======
 
 endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed
-endoscopes. It uses the [OpenCV][opencv] camera calibration module.
+endoscopes. It uses the `OpenCV`_ camera calibration module.
 
-endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the
-[Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at
-[University College London (UCL)][ucl].
+.. _`OpenCV`: http://opencv.org/
+
+endocal was developed by Dzhoshkun I. Shakir as part of the `GIFT-Surg project`_ at the
+`Translational Imaging Group`_ in the `Centre for Medical Image Computing`_ at
+`University College London (UCL)`_.
+
+.. _`GIFT-Surg project`: http://www.gift-surg.ac.uk
+.. _`Translational Imaging Group`: http://cmictig.cs.ucl.ac.uk
+.. _`Centre for Medical Image Computing`: http://cmic.cs.ucl.ac.uk
+.. _`University College London (UCL)`: http://www.ucl.ac.uk
 
 Features
 --------
