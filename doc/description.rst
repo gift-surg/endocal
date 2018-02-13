@@ -4,8 +4,6 @@ endocal
 endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed
 endoscopes. It uses the `OpenCV`_ camera calibration module.
 
-.. _`OpenCV`: http://opencv.org/
-
 endocal was developed by Dzhoshkun I. Shakir as part of the `GIFT-Surg project`_ at the
 `Translational Imaging Group`_ in the `Centre for Medical Image Computing`_ at
 `University College London (UCL)`_.
@@ -27,13 +25,13 @@ Features
 System requirements
 -------------------
 
-* [Python][python]
-* [pip][pip]
-* [OpenCV][opencv] (installed with [Python][python] support)
-* For live calibration: a video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related
+* `Python`_
+* `pip`_
+* `OpenCV`_ (installed with `Python`_ support)
+* For live calibration: a video source `supported by OpenCV`_ (see esp. the OpenCV tutorials related
 to video IO)
-* [PyYAML][pyyaml]
-* [NumPy][numpy]
+* `PyYAML`_
+* `NumPy`_
 * So far endocal has been tested on the following operating systems:
 
   - Ubuntu 16.04.3 LTS 64-bit
@@ -42,6 +40,13 @@ to video IO)
   - macOS Sierra 10.12.6
   - OS X El Capitan 10.11.3
   - Windows 10 Professional 64-bit
+
+.. _`Python`: https://www.python.org/
+.. _`pip`: https://pip.pypa.io/en/stable/installing/
+.. _`supported by OpenCV`: http://docs.opencv.org/
+.. _`PyYAML`: https://github.com/yaml/pyyaml
+.. _`NumPy`: http://www.numpy.org/
+.. _`OpenCV`: http://opencv.org/
 
 Installation
 ------------
