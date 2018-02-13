@@ -17,8 +17,7 @@ summary = 'A cross-platform, compact GUI application for the optical' +\
 
 # Get the long description
 with open(path.join(doc_dir, 'description.rst'), encoding='utf-8') as f:
-    description = f.read()
-    long_description = '%s\n\n%s' % (summary, description)
+    long_description = f.read()
 
 setup(
     name='endocal',
