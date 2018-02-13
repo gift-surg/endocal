@@ -1,6 +1,3 @@
-endocal
-=======
-
 endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed
 endoscopes. It uses the `OpenCV`_ camera calibration module.
 
