@@ -1,3 +1,0 @@
-endocal was developed by Dzhoshkun I. Shakir as part of the GIFT-Surg project (http://www.gift-surg.ac.uk) at the Translational Imaging Group in the Centre for Medical Image Computing at University College London (UCL). See the endocal home-page on GitHub for features and manual.
-
-Copyright (c) 2016, University College London. This work was supported through an Innovative Engineering for Health award by the Wellcome Trust [WT101957], the Engineering and Physical Sciences Research Council (EPSRC) and a National Institute for Health Research Biomedical Research Centre UCLH/UCL High Impact Initiative.
