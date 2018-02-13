@@ -17,7 +17,10 @@ Features
 * Command-line application for generating `ASCII DXF files`_ for use in calibration target fabrication (translated\
   from Matlab scripts developed by Daniil I. Nikitichev)
 
+The detailed changelog is available on `GitHub`_.
+
 .. _`ASCII DXF files`: http://www.autodesk.com/techpubs/autocad/acadr14/dxf/
+.. _`GitHub`: https://github.com/gift-surg/endocal/blob/master/CHANGELOG.md
 
 System requirements
 -------------------
