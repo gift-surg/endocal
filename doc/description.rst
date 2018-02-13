@@ -54,7 +54,7 @@ Installation
 Installing endocal
 ^^^^^^^^^^^^^^^^^^
 
-`pip install endocal`
+``pip install endocal``
 
 Testing your installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
