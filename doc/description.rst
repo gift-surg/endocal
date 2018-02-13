@@ -137,8 +137,10 @@ Please check out `these hints`_ in case you encounter any issues with endocal.
 Licensing and copyright
 -----------------------
 
-Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a
+Copyright (c) 2016, `University College London`_. endocal is available as free open-source software under a
 BSD 3-Clause Licence.
+
+.. _`University College London`: http://www.ucl.ac.uk
 
 Acknowledgements
 ----------------
