@@ -29,7 +29,7 @@ System requirements
 * `pip`_
 * `OpenCV`_ (installed with `Python`_ support)
 * For live calibration: a video source `supported by OpenCV`_ (see esp. the OpenCV tutorials related
-to video IO)
+  to video IO)
 * `PyYAML`_
 * `NumPy`_
 * So far endocal has been tested on the following operating systems:
