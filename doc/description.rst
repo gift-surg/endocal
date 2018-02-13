@@ -19,8 +19,8 @@ Features
 --------
 
 * Lightweight, compact GUI application for optical distortion calibration of endoscopes
-* Command-line application for generating `ASCII DXF files`_
-for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
+* Command-line application for generating `ASCII DXF files`_ for use in calibration target fabrication (translated\
+  from Matlab scripts developed by Daniil I. Nikitichev)
 
 .. _`ASCII DXF files`: http://www.autodesk.com/techpubs/autocad/acadr14/dxf/
 
