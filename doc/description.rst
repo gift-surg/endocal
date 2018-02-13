@@ -63,7 +63,7 @@ Testing your installation
 * `This screenshot`_ shows you what to expect on launching the application.
 * To perform an optical distortion calibration, follow the instructions shown in red on top of the application window.
 * While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as
-  in `this overlay screenshot`_.
+  in `this acquisition-mode screenshot`_.
 * All data for each calibration will be saved in a human-readably time-stamped, uniquely-named folder within a root 
   folder named ``tmp-sample_002`` created within the folder where the application was launched.
   For instance ``tmp-sample_002/2018-02-08-11-03-19-AHDHO`` for a calibration run on 8 February 2018 at 11:03 am.
@@ -73,12 +73,12 @@ Testing your installation
   * Frames used for calibration saved as indexed image files, e.g. ``frame_009.jpg``
 
 * After performing a calibration, the application will automatically show the undistorted images in real time to the
-  right of the application window as in `this undistortion screenshot`_.
+  right of the application window as in `this undistortion-mode screenshot`_.
 
 .. _`This screenshot`: https://github.com/gift-surg/endocal/blob/master/endocal/res/screenshot-start.png
-.. _`this overlay screenshot`: https://github.com/gift-surg/endocal/blob/master/endocal/res/screenshot-detection.png
+.. _`this acquisition-mode screenshot`: https://github.com/gift-surg/endocal/blob/master/endocal/res/screenshot-detection.png
 .. _`YAML`: http://yaml.org/
-.. _`this undistortion screenshot`: https://github.com/gift-surg/endocal/blob/master/endocal/res/screenshot-undistort.png
+.. _`this undistortion-mode screenshot`: https://github.com/gift-surg/endocal/blob/master/endocal/res/screenshot-undistort.png
 
 Uninstalling endocal
 ^^^^^^^^^^^^^^^^^^^^
