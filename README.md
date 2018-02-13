@@ -29,10 +29,11 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 
 ## Installation
 
+#### Installing endocal
 
-To install endocal: `pip install endocal`
+`pip install endocal`
 
-To test your installation:
+#### Testing your installation
 
 * Launch the test application by running `endocal-test`:
 * [This screenshot](endocal/res/screenshot-start.png) shows you what to expect on launching the application.
@@ -46,7 +47,9 @@ The saved data includes:
   * Frames used for calibration saved as indexed image files, e.g. `frame_009.jpg`
 * After performing a calibration, the application will automatically show the undistorted images in real time to the right of the application window as in [this screenshot](endocal/res/screenshot-undistort.png).
 
-To uninstall endocal: `pip uninstall endocal`
+#### Uninstalling endocal
+
+`pip uninstall endocal`
 
 ## Usage
 
