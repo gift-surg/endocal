@@ -150,7 +150,7 @@ This work was supported through an Innovative Engineering for Health award by th
 `National Institute for Health Research`_ Biomedical Research Centre `UCLH`_/UCL High Impact Initiative.
 
 
-.. _`National Institute for Health Research`: http://www.nihr.ac.uk/research
+.. _`National Institute for Health Research`: http://www.nihr.ac.uk
 .. _`UCLH`: http://www.uclh.nhs.uk
 .. _`Engineering and Physical Sciences Research Council (EPSRC)`: http://www.epsrc.ac.uk
 .. _`Wellcome Trust`: http://www.wellcome.ac.uk
