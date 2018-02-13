@@ -16,9 +16,9 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 * [OpenCV][opencv] (installed with [Python][python] support)
 * For live calibration: a video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related
  to video IO)
-* Operating system: endocal should work virtually on all platforms where 
-[OpenCV][opencv] can be installed.
-So far endocal has been tested on the following operating systems:
+* [PyYAML][pyyaml]
+* [NumPy][numpy]
+* So far endocal has been tested on the following operating systems:
 
   - Ubuntu 16.04.3 LTS 64-bit
   - Ubuntu 14.04.3 LTS 64-bit
@@ -88,3 +88,6 @@ This work was supported through an Innovative Engineering for Health award by th
 [opencv_docs]: http://docs.opencv.org/
 [python]: https://www.python.org/
 [pip]: https://pip.pypa.io/en/stable/installing/
+[yaml]: http://yaml.org/
+[pyyaml]: https://github.com/yaml/pyyaml
+[numpy]: http://www.numpy.org/
