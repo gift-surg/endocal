@@ -16,7 +16,7 @@ summary = 'A cross-platform, compact GUI application for the optical' +\
           ' distortion calibration of fluid-immersed endoscopes.'
 
 # Get the long description
-with open(path.join(doc_dir, 'description.txt'), encoding='utf-8') as f:
+with open(path.join(doc_dir, 'description.rst'), encoding='utf-8') as f:
     description = f.read()
     long_description = '%s\n\n%s' % (summary, description)
 
