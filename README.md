@@ -1,13 +1,17 @@
 # endocal
 
-endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed endoscopes. It uses the [OpenCV][opencv] camera calibration module.
+endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed
+endoscopes. It uses the [OpenCV][opencv] camera calibration module.
 
-endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at [University College London (UCL)][ucl].
+endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the
+[Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at
+[University College London (UCL)][ucl].
 
 ## Features
 
 * Lightweight, compact GUI application for optical distortion calibration of endoscopes
-* Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
+* Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/)
+for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
 
 ## System requirements
 
@@ -15,7 +19,7 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 * [pip][pip]
 * [OpenCV][opencv] (installed with [Python][python] support)
 * For live calibration: a video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related
- to video IO)
+to video IO)
 * [PyYAML][pyyaml]
 * [NumPy][numpy]
 * So far endocal has been tested on the following operating systems:
@@ -38,7 +42,8 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 * Launch the test application by running `endocal-test`:
 * [This screenshot](endocal/res/screenshot-start.png) shows you what to expect on launching the application.
 * To perform an optical distortion calibration, follow the instructions shown in red on top of the application window.
-* While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as in [this screenshot](endocal/res/screenshot-detection.png).
+* While acquiring calibration data, detected calibration pattern blobs will be emphasized with a virtual overlay as
+in [this screenshot](endocal/res/screenshot-detection.png).
 * All data for each calibration will be saved in a human-readably time-stamped, uniquely-named folder within a root 
 folder named `tmp-sample_002` created within the folder where the application was launched.
 For instance `tmp-sample_002/2018-02-08-11-03-19-AHDHO` for a calibration run on 8 February 2018 at 11:03 am.
@@ -80,13 +85,15 @@ endocal --input 0 --pattern-specs 3 11 3 1 --output-folder ./calibration-results
 
 `dxf --help` shows details of what input parameters are expected.
 
-For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser cutter with a beam width of `45 μm` (microns):
+For instance to generate an asymmetric grid of circles each with a diameter of `1 mm` to be etched by a laser
+cutter with a beam width of `45 μm` (microns):
 
 ```sh
 dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 ```
 
-Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
+Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend
+filename always inferred from main DXF filename).
 
 #### Troubleshooting
 
@@ -94,11 +101,14 @@ Please check out [these hints](doc/issues.md) in case you encounter any issues w
 
 ## Licensing and copyright
 
-Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a BSD 3-Clause Licence.
+Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a
+BSD 3-Clause Licence.
 
 ## Acknowledgements
 
-This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust] [WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a [National Institute for Health Research][nihr] Biomedical Research Centre [UCLH][uclh]/UCL High Impact Initiative.
+This work was supported through an Innovative Engineering for Health award by the [Wellcome Trust][wellcometrust]
+[WT101957], the [Engineering and Physical Sciences Research Council (EPSRC)][epsrc] [NS/A000027/1] and a
+[National Institute for Health Research][nihr] Biomedical Research Centre [UCLH][uclh]/UCL High Impact Initiative.
 
 
 [tig]: http://cmictig.cs.ucl.ac.uk
