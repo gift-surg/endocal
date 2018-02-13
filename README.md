@@ -4,14 +4,14 @@ endocal is a cross-platform, compact GUI application for the optical distortion 
 
 endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][giftsurg] at the [Translational Imaging Group][tig] in the [Centre for Medical Image Computing][cmic] at [University College London (UCL)][ucl].
 
-## License
-
-Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a BSD 3-Clause Licence.
-
 ## Features
 
 * Lightweight, compact GUI application for optical distortion calibration of endoscopes
 * Command-line application for generating [ASCII DXF files](http://www.autodesk.com/techpubs/autocad/acadr14/dxf/) for use in calibration target fabrication (translated from Matlab scripts developed by Daniil I. Nikitichev)
+
+## License
+
+Copyright (c) 2016, [University College London][ucl]. endocal is available as free open-source software under a BSD 3-Clause Licence.
 
 ## System requirements
 
