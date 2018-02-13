@@ -29,7 +29,6 @@ endocal was developed by Dzhoshkun I. Shakir as part of the [GIFT-Surg project][
 
 ## Installation
 
-**Note:** Please check out [these hints](doc/issues.md) if you encounter any issues with endocal.
 
 To install endocal: `pip install endocal`
 
@@ -85,6 +84,10 @@ dxf --laser-beam-width 45 --diameter 1 --output-file output.dxf
 ```
 
 Here the grid is saved to file `output.dxf` and the corresponding (ellipse) legend to `output-legend.dxf` (legend filename always inferred from main DXF filename).
+
+#### Troubleshooting
+
+Please check out [these hints](doc/issues.md) in case you encounter any issues with endocal.
 
 ## Licensing and copyright
 
