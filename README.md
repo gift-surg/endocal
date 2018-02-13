@@ -19,7 +19,7 @@ Copyright (c) 2016, [University College London][ucl]. endocal is available as fr
 * [pip](https://pip.pypa.io/en/stable/installing/)
 * (Online calibration) Video source supported by [OpenCV][opencv_docs] (see esp. the OpenCV tutorials related to video IO)
 
-## How to install / remove
+## Installation
 
 **Note:** Please check out [these hints](doc/issues.md) if you encounter any issues with endocal.
 
