@@ -12,6 +12,11 @@ and this project adheres to [PEP440 date-based versioning][pep440-date].
 ## [18.02.13]
 
 ## [16.08.08]
+### Added
+* Support for Python 3
+* Support for OpenCV 3
+* Troubleshooting hints
+* Graceful handling of unavailable OpenCV
 
 ## 16.07.22
 ### Added
