@@ -1,7 +1,7 @@
 from cv2 import __version__, findCirclesGrid,\
     CALIB_CB_ASYMMETRIC_GRID, calibrateCamera, undistort,\
     CALIB_FIX_K4, CALIB_FIX_K5, CALIB_ZERO_TANGENT_DIST, projectPoints
-from yaml import dump
+from yaml import (dump, load)
 import numpy as np
 from threading import Thread
 from time import strftime
@@ -9,6 +9,7 @@ from os.path import join, isdir
 from os import makedirs
 from random import choice
 from string import ascii_uppercase
+from .utils import extract_numbers
 opencv_version = -1
 if __version__.startswith('2'):
     opencv_version = 2
@@ -152,8 +153,11 @@ class Calibrator:
         self.grid_candidates = None
         self.image_size = None
         if file_path is not None:
-            # TODO
-            pass
+            with open(file_path, 'r') as calibration_file:
+                calibration_dict = load(calibration_file)
+                self.camera_matrix = np.array(extract_numbers(calibration_dict['camera_matrix'])).reshape((3, 3))
+                self.dist_coeffs = np.array(extract_numbers(calibration_dict['dist_coeffs']))
+                self.reproj_errs = np.array(extract_numbers(calibration_dict['per_view_reproj_errs']))
         else:
             self.camera_matrix = None
             self.dist_coeffs = None
