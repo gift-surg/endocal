@@ -168,9 +168,6 @@ class Calibrator:
         if roi is not None:
             self.roi = roi
         self.full = full
-        self.reset()
-        # TODO file_path
-        pass
 
     def reset(self):
         """Reset all data saved so far.
