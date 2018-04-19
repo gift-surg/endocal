@@ -151,9 +151,13 @@ class Calibrator:
         self.grids = None
         self.grid_candidates = None
         self.image_size = None
-        self.camera_matrix = None
-        self.dist_coeffs = None
-        self.reproj_errs = None
+        if file_path is not None:
+            # TODO
+            pass
+        else:
+            self.camera_matrix = None
+            self.dist_coeffs = None
+            self.reproj_errs = None
         Calibrator.MIN_FRAME_COUNT = 10
         self.calibration_thread = None
         self.roi = full
